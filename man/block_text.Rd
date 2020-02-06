@@ -4,13 +4,13 @@
 \alias{block_text}
 \title{FUNCTION_TITLE}
 \usage{
-block_text(text, type = c("plain-text", "mrkdwn"), emoji = NULL,
+block_text(text, type = c("mrkdwn", "plain-text"), emoji = NULL,
   verbatim = NULL)
 }
 \arguments{
 \item{text}{PARAM_DESCRIPTION}
 
-\item{type}{PARAM_DESCRIPTION, Default: c("plain-text", "mrkdwn")}
+\item{type}{PARAM_DESCRIPTION, Default: c("mrkdwn", "plain-text")}
 
 \item{emoji}{PARAM_DESCRIPTION, Default: NULL}
 

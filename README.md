@@ -29,7 +29,7 @@ library(slackblocks)
 ``` r
 slackblocks::block_text('my text')
 #> {
-#>   "type": "plain-text",
+#>   "type": "mrkdwn",
 #>   "text": "my text"
 #> }
 ```
@@ -42,6 +42,52 @@ slackblocks::block_image('url_to_image')
 #>   "alt_text": "image"
 #> }
 ```
+
+``` r
+(b <- block_section(
+  text = block_text(
+    text = 'A message *with some bold text* and _some italicized text_.'),
+  fields = list(
+    block_text('*Priority*'),
+    block_text('*Type*'),
+    block_text('High'),
+    block_text(':heavy_check_mark:')
+    )
+  ))
+#> {
+#>   "type": "section",
+#>   "text": {
+#>     "type": "mrkdwn",
+#>     "text": "A message *with some bold text* and _some italicized text_."
+#>   },
+#>   "fields": [
+#>     {
+#>       "type": "mrkdwn",
+#>       "text": "*Priority*"
+#>     },
+#>     {
+#>       "type": "mrkdwn",
+#>       "text": "*Type*"
+#>     },
+#>     {
+#>       "type": "mrkdwn",
+#>       "text": "High"
+#>     },
+#>     {
+#>       "type": "mrkdwn",
+#>       "text": ":heavy_check_mark:"
+#>     }
+#>   ]
+#> }
+```
+
+## Posting Blocks to Slack
+
+``` r
+post_block(b,channel = 'yonicd')
+```
+
+<img src="man/figures/sections.png" width="100%" />
 
 ## Reprex
 
@@ -56,3 +102,5 @@ hist(runif(x))
 text = 'i have a question about this plot',
 channel = 'yonicd')
 ```
+
+<img src="man/figures/plot_example.png" width="100%" />

@@ -137,23 +137,3 @@ radio_buttons <- function(id, opts, initial_options = NULL, confirm = NULL){
   structure(compact(payload),class = c('block','list'))
   
 }
-
-
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
-#' @param el PARAM_DESCRIPTION
-#' @param id PARAM_DESCRIPTION, Default: NULL
-#' @param accessory PARAM_DESCRIPTION, Default: NULL
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
-#' @examples 
-#' \dontrun{
-#' if(interactive()){
-#'  #EXAMPLE1
-#'  }
-#' }
-#' @rdname block_section
-#' @export 
-block_section <- function(el, id = NULL,accessory = NULL){
-  compact(list(type = 'section',block_id = id, text = el,accessory = accessory))
-}

@@ -1,7 +1,7 @@
 #' @title FUNCTION_TITLE
 #' @description FUNCTION_DESCRIPTION
 #' @param text PARAM_DESCRIPTION
-#' @param type PARAM_DESCRIPTION, Default: c("plain-text", "mrkdwn")
+#' @param type PARAM_DESCRIPTION, Default: c("mrkdwn", "plain-text")
 #' @param emoji PARAM_DESCRIPTION, Default: NULL
 #' @param verbatim PARAM_DESCRIPTION, Default: NULL
 #' @return OUTPUT_DESCRIPTION
@@ -15,10 +15,10 @@
 #' @rdname block_text
 #' @export 
 
-block_text <- function(text, type = c('plain-text', 'mrkdwn'), emoji = NULL, verbatim = NULL){
+block_text <- function(text, type = c('mrkdwn', 'plain-text'), emoji = NULL, verbatim = NULL){
 
   payload <- list(
-    type = match.arg(type,c('plain-text', 'mrkdwn')),
+    type = match.arg(type,c('mrkdwn', 'plain-text')),
     text = text,
     emoji = yesno(emoji),
     verbatim = yesno(verbatim)

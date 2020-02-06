@@ -4,9 +4,9 @@ yesno <- function(x){
     return(x)
   
   if(x){
-    'yes'
+    'true'
   }else{
-    'no'
+    'false'
   }
 }
 
@@ -23,6 +23,11 @@ print.block <- function(x,...){
   print(jsonlite::toJSON(x,auto_unbox = TRUE,pretty = TRUE,...))
 } 
 
+#' @importFrom jsonlite toJSON
+#' @export
+print.blocks <- function(x,...){
+  print(jsonlite::toJSON(x,auto_unbox = TRUE,pretty = TRUE,...))
+} 
 
 #' @title FUNCTION_TITLE
 #' @description FUNCTION_DESCRIPTION

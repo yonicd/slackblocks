@@ -43,6 +43,29 @@ slackblocks::block_text('my text')
 slackblocks::block_image('url_to_image')
 ```
 
+```{r}
+(b <- block_section(
+  text = block_text(
+    text = 'A message *with some bold text* and _some italicized text_.'),
+  fields = list(
+    block_text('*Priority*'),
+    block_text('*Type*'),
+    block_text('High'),
+    block_text(':heavy_check_mark:')
+    )
+  ))
+```
+
+## Posting Blocks to Slack
+
+```{r,eval=FALSE}
+post_block(b,channel = 'yonicd')
+```
+
+```{r,echo=FALSE}
+knitr::include_graphics('man/figures/sections.png')
+```
+
 ## Reprex
 
 ```{r,eval = FALSE}
@@ -55,4 +78,8 @@ hist(runif(x))
 },
 text = 'i have a question about this plot',
 channel = 'yonicd')
+```
+
+```{r,echo=FALSE}
+knitr::include_graphics('man/figures/plot_example.png')
 ```
