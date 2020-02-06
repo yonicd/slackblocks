@@ -3,7 +3,6 @@
 #' @param block PARAM_DESCRIPTION
 #' @param channel Channel ID, label or a URL link to a message
 #' @param token PARAM_DESCRIPTION, Default: Sys.getenv("SLACK_API_TOKEN")
-#' @param message_link character, 
 #' @return OUTPUT_DESCRIPTION
 #' @details DETAILS
 #' @examples 

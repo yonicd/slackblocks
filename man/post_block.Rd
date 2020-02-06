@@ -12,8 +12,6 @@ post_block(block, channel, token = Sys.getenv("SLACK_API_TOKEN"))
 \item{channel}{Channel ID, label or a URL link to a message}
 
 \item{token}{PARAM_DESCRIPTION, Default: Sys.getenv("SLACK_API_TOKEN")}
-
-\item{message_link}{character,}
 }
 \value{
 OUTPUT_DESCRIPTION
