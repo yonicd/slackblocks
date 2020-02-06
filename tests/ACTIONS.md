@@ -47,7 +47,8 @@
   <td>&nbsp;</td>
   <td>
   <h4>Reverse Dependencies</h4>
-  <td>&nbsp;</td>
+  <br>
+  &nbsp;
   </td>
 </tr>
 
