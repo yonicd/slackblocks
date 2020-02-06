@@ -8,7 +8,7 @@ Authors@R:
            email = "yonicd@gmail.com",
            comment = c(ORCID = "0000-0002-4222-1819"))
 Description: Create Slack Blocks in R and POST reprex outputs for slack.
-Depends: R (>= 3.6.0)
+Depends: R (>= 3.5.0)
 Imports: checkmate,reprex,jsonlite,slackcalls,slackteams
 Remotes: 
     yonicd/slackteams, 
