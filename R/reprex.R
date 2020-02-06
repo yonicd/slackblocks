@@ -50,6 +50,5 @@ slack_reprex <- function(..., text, channel, token = Sys.getenv('SLACK_API_TOKEN
   post_block(block = ret,
              channel = channel, 
              token = token)
-             
   
 }
