@@ -4,12 +4,16 @@
 \alias{post_block}
 \title{FUNCTION_TITLE}
 \usage{
-post_block(block, channel, token = Sys.getenv("SLACK_API_TOKEN"))
+post_block(block, channel, thread_ts = NULL,
+  token = Sys.getenv("SLACK_API_TOKEN"))
 }
 \arguments{
 \item{block}{PARAM_DESCRIPTION}
 
-\item{channel}{Channel ID, label or a URL link to a message}
+\item{channel}{character, Channel ID, label or a URL link to a message}
+
+\item{thread_ts}{character slack api timestamp of the format
+xxxxxxxxxx.xxxxxx, Default: NULL}
 
 \item{token}{PARAM_DESCRIPTION, Default: Sys.getenv("SLACK_API_TOKEN")}
 }

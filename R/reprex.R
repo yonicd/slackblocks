@@ -34,19 +34,21 @@ slack_reprex <- function(..., text, channel, token = Sys.getenv('SLACK_API_TOKEN
   
   rx_txt <- gsub('^``` r','```',rx_txt)
   
+  q_block <- block_section(block_text(text),id = 'section_q')
+    
+  res <- post_block(block = q_block, channel = channel, token = token)
+  
   if(length(img_idx)>0){
-    ret <- wrap_blocks(
-      block_section(block_text(text),id = 'section_q'),
+    a_block <- wrap_blocks(
       block_section(block_text(rx_txt),id = 'section_md'),
       block_image(rx_img)
     )
   }else{
-    ret <- wrap_blocks(
-      block_section(block_text(text),id = 'section_q'),
+    a_block <- wrap_blocks(
       block_section(block_text(rx_txt),id = 'section_md')
     )
   }
   
-  post_block(block = ret, channel = channel, token = token)
+  post_block(block = a_block, thread_ts = res$ts, channel = res$channel, token = token)
     
 }
