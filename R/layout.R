@@ -69,3 +69,13 @@ block_divider <- function(id = NULL){
 wrap_blocks <- function(...){
   structure(list(...),class = c('blocks','list'))
 }
+
+#' @export 
+as.blocks.list <- function(x){
+  structure(x,class = c('blocks','list'))
+}
+
+#' @export 
+as.blocks <- function(x){
+  UseMethod('as.blocks')
+}

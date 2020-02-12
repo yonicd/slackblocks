@@ -2,10 +2,13 @@
 % Please edit documentation in R/post.R
 \name{post_block}
 \alias{post_block}
+\alias{post_thread}
 \title{FUNCTION_TITLE}
 \usage{
 post_block(block, channel, thread_ts = NULL,
   token = Sys.getenv("SLACK_API_TOKEN"))
+
+post_thread(res, block)
 }
 \arguments{
 \item{block}{PARAM_DESCRIPTION}
