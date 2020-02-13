@@ -1,4 +1,4 @@
-#' @title FUNCTION_TITLE
+#' @title Create a block for text
 #' @description FUNCTION_DESCRIPTION
 #' @param text PARAM_DESCRIPTION
 #' @param type PARAM_DESCRIPTION, Default: c("mrkdwn", "plain-text")
