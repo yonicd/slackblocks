@@ -20,7 +20,7 @@ block_text(text, type = c("mrkdwn", "plain-text"), emoji = NULL,
 OUTPUT_DESCRIPTION
 }
 \description{
-FUNCTION_DESCRIPTION
+Create slack block that contains text
 }
 \details{
 DETAILS
