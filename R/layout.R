@@ -27,6 +27,32 @@ block_section <- function(text, id = NULL, fields = NULL, accessory = NULL){
   structure(compact(payload),class = c('block','block_section','list')) 
 }
 
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param elements An array of image elements and text objects. Maximum number of items is 10.
+#' @param id PARAM_DESCRIPTION, Default: NULL
+#' @param fields PARAM_DESCRIPTION, Default: NULL
+#' @param accessory PARAM_DESCRIPTION, Default: NULL
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @rdname block_context
+#' @export 
+block_context <- function(elements, id = NULL){
+  
+  payload <- list(
+    type = 'context',
+    elements = elements,
+    block_id = id
+  )
+  
+  structure(compact(payload),class = c('block','block_context','list')) 
+}
 
 #' @title FUNCTION_TITLE
 #' @description FUNCTION_DESCRIPTION

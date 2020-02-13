@@ -52,7 +52,7 @@ slack_reprex <- function(..., text = NULL, channel, token = Sys.getenv('SLACK_AP
 
 }
 
-
+#' @export
 reprex_to_blocks <- function(x){
   
   rx_chr <- x[nzchar(x)]
@@ -68,7 +68,17 @@ reprex_to_blocks <- function(x){
   rx_txts <- lapply(rx_txt_idx,function(x){
     y <- rx_chr[x]
     y <- gsub('^``` r','```',y)
-    block_section(text = block_text(paste0(y,collapse = '\n') ))
+
+    if(any(grepl('^#> Error',y))){
+      block_context(elements = list(
+        block_text(text = ':rotating_light:'),
+        block_text(paste0(y,collapse = '\n'))
+      ))
+    }else{
+      block_section(text = block_text(paste0(y,collapse = '\n') ))  
+    }
+    
+    
   })
   
   rx_combine_idx <- rx_txt_idx 
@@ -90,5 +100,5 @@ reprex_to_blocks <- function(x){
     
   }
   
-  reprex_block <- as.blocks(rx_combine)
+  as.blocks(rx_combine)
 }
