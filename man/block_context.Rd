@@ -10,10 +10,6 @@ block_context(elements, id = NULL)
 \item{elements}{An array of image elements and text objects. Maximum number of items is 10.}
 
 \item{id}{PARAM_DESCRIPTION, Default: NULL}
-
-\item{fields}{PARAM_DESCRIPTION, Default: NULL}
-
-\item{accessory}{PARAM_DESCRIPTION, Default: NULL}
 }
 \value{
 OUTPUT_DESCRIPTION

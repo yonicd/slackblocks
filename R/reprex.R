@@ -52,7 +52,20 @@ slack_reprex <- function(..., text = NULL, channel, token = Sys.getenv('SLACK_AP
 
 }
 
-#' @export
+
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param x PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @rdname reprex_to_blocks
+#' @export 
 reprex_to_blocks <- function(x){
   
   rx_chr <- x[nzchar(x)]

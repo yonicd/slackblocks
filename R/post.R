@@ -23,7 +23,19 @@ post_block <- function(block, channel, thread_ts = NULL, token = Sys.getenv('SLA
 
 }
 
-#' @rdname post_block
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param res PARAM_DESCRIPTION
+#' @param block PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @rdname post_thread
 #' @export 
 post_thread <- function(res,block){
   post_block(block = block, channel = res$channel, thread_ts = res$ts, token = attr(res,'body')[['token']])
