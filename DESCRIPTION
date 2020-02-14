@@ -1,6 +1,6 @@
 Package: slackblocks
 Title: Slack Blocks API for R
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     person(given = "Jonathan",
            family = "Sidi",
@@ -9,7 +9,7 @@ Authors@R:
            comment = c(ORCID = "0000-0002-4222-1819"))
 Description: Create Slack Blocks in R and POST reprex outputs for slack.
 Depends: R (>= 3.5.0)
-Imports: checkmate,reprex,jsonlite,slackcalls,slackteams
+Imports: checkmate,jsonlite,slackcalls,slackteams
 Remotes: 
     yonicd/slackteams, 
     yonicd/slackcalls
@@ -17,7 +17,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Suggests: 
     rmarkdown,
     knitr,

@@ -63,6 +63,11 @@ slackblocks::block_image('url_to_image')
 
 ## Posting Blocks to Slack
 
+```{r,eval = FALSE}
+slackteams::load_team_dcf(team = 'r4ds')
+slackteams::activate_team('r4ds')
+```
+
 ```{r,eval=FALSE}
 post_block(b,channel = 'yonicd')
 ```
@@ -71,73 +76,3 @@ post_block(b,channel = 'yonicd')
 knitr::include_graphics('man/figures/sections.png')
 ```
 
-## Reprex
-
-```{r,eval = FALSE}
-slackteams::load_team_dcf(team = 'r4ds')
-slackteams::activate_team('r4ds')
-```
-
-```{r,eval=FALSE}
-slackblocks::slack_reprex({
-  x <- 10
-  hist(runif(x))
-  hist(runif(2*y))
-},
-text = 'My question is ...) ',
-channel = 'yonicd')
-```
-
-```{r,echo=FALSE}
-knitr::include_graphics('man/figures/plot_example.png')
-```
-
-## Reprex Under the Hood
-
-### Convert reprex `gh` output to slack blocks
-
-```{r}
-reprex_block <- reprex::reprex({
-x <- 10
-hist(runif(x))
-hist(runif(2*y))
-},
-venue = 'gh', advertise = FALSE, show = FALSE)%>%
-reprex_to_blocks()
-```
-
-```{r, echo=FALSE}
-reprex_block
-```
-
-### post the blocks
-
-```{r, eval = FALSE}
-reprex_block%>%
-  post_block(
-    channel = 'yonicd'
-  )
-```
-
-### Post with a question and attach the reprex into a thread.
-
-```{r}
-q_txt <- block_text(
-  text = 'My Question is ...'
-)
-```
-
-```{r,echo=FALSE}
-q_txt
-```
-
-```{r,eval  = FALSE}
-
-q_txt%>%
-post_block(
-  channel = 'yonicd'
-    )%>%
-post_thread(
-  block = reprex_block
-)
-```

@@ -93,96 +93,12 @@ slackblocks::block_image('url_to_image')
 ## Posting Blocks to Slack
 
 ``` r
-post_block(b,channel = 'yonicd')
-```
-
-<img src="man/figures/sections.png" width="100%" />
-
-## Reprex
-
-``` r
 slackteams::load_team_dcf(team = 'r4ds')
 slackteams::activate_team('r4ds')
 ```
 
 ``` r
-slackblocks::slack_reprex({
-  x <- 10
-  hist(runif(x))
-  hist(runif(2*y))
-},
-text = 'My question is ...) ',
-channel = 'yonicd')
+post_block(b,channel = 'yonicd')
 ```
 
-<img src="man/figures/plot_example.png" width="100%" />
-
-## Reprex Under the Hood
-
-### Convert reprex `gh` output to slack blocks
-
-``` r
-reprex_block <- reprex::reprex({
-x <- 10
-hist(runif(x))
-hist(runif(2*y))
-},
-venue = 'gh', advertise = FALSE, show = FALSE)%>%
-reprex_to_blocks()
-#> Rendering reprex...
-```
-
-    #> [
-    #>   {
-    #>     "type": "section",
-    #>     "text": {
-    #>       "type": "mrkdwn",
-    #>       "text": "```\nx <- 10\nhist(runif(x))\n```"
-    #>     }
-    #>   },
-    #>   {
-    #>     "type": "image",
-    #>     "image_url": "https://i.imgur.com/T3SAbjA.png",
-    #>     "alt_text": "image"
-    #>   },
-    #>   {
-    #>     "type": "section",
-    #>     "text": {
-    #>       "type": "mrkdwn",
-    #>       "text": "```\nhist(runif(2*y))\n#> Error in runif(2 * y): object 'y' not found\n```"
-    #>     }
-    #>   }
-    #> ]
-
-### post the blocks
-
-``` r
-reprex_block%>%
-  post_block(
-    channel = 'yonicd'
-  )
-```
-
-### Post with a question and attach the reprex into a thread.
-
-``` r
-q_txt <- block_text(
-  text = 'My Question is ...'
-)
-```
-
-    #> {
-    #>   "type": "mrkdwn",
-    #>   "text": "My Question is ..."
-    #> }
-
-``` r
-
-q_txt%>%
-post_block(
-  channel = 'yonicd'
-    )%>%
-post_thread(
-  block = reprex_block
-)
-```
+<img src="man/figures/sections.png" width="100%" />

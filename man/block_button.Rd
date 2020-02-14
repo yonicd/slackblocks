@@ -4,8 +4,7 @@
 \alias{block_button}
 \title{FUNCTION_TITLE}
 \usage{
-block_button(id, text, value = NULL, url = NULL, style = NULL,
-  confirm = NULL)
+block_button(id, text, value = NULL, url = NULL, style = NULL, confirm = NULL)
 }
 \arguments{
 \item{id}{PARAM_DESCRIPTION}
