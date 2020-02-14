@@ -1,5 +1,5 @@
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
+#' @title Create a block for text
+#' @description Create slack block that contains text
 #' @param text PARAM_DESCRIPTION
 #' @param type PARAM_DESCRIPTION, Default: c("mrkdwn", "plain-text")
 #' @param emoji PARAM_DESCRIPTION, Default: NULL

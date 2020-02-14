@@ -2,7 +2,7 @@
 % Please edit documentation in R/compositions.R
 \name{block_text}
 \alias{block_text}
-\title{FUNCTION_TITLE}
+\title{Create a block for text}
 \usage{
 block_text(text, type = c("mrkdwn", "plain-text"), emoji = NULL,
   verbatim = NULL)
@@ -20,7 +20,7 @@ block_text(text, type = c("mrkdwn", "plain-text"), emoji = NULL,
 OUTPUT_DESCRIPTION
 }
 \description{
-FUNCTION_DESCRIPTION
+Create slack block that contains text
 }
 \details{
 DETAILS

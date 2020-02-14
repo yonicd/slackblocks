@@ -27,6 +27,30 @@ block_section <- function(text, id = NULL, fields = NULL, accessory = NULL){
   structure(compact(payload),class = c('block','block_section','list')) 
 }
 
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param elements An array of image elements and text objects. Maximum number of items is 10.
+#' @param id PARAM_DESCRIPTION, Default: NULL
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @rdname block_context
+#' @export 
+block_context <- function(elements, id = NULL){
+  
+  payload <- list(
+    type = 'context',
+    elements = elements,
+    block_id = id
+  )
+  
+  structure(compact(payload),class = c('block','block_context','list')) 
+}
 
 #' @title FUNCTION_TITLE
 #' @description FUNCTION_DESCRIPTION
@@ -68,4 +92,26 @@ block_divider <- function(id = NULL){
 
 wrap_blocks <- function(...){
   structure(list(...),class = c('blocks','list'))
+}
+
+#' @export 
+as.blocks.list <- function(x){
+  structure(x,class = c('blocks','list'))
+}
+
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param x PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @rdname as.blocks
+#' @export 
+as.blocks <- function(x){
+  UseMethod('as.blocks')
 }

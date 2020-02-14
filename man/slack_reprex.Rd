@@ -4,7 +4,8 @@
 \alias{slack_reprex}
 \title{FUNCTION_TITLE}
 \usage{
-slack_reprex(..., text, channel, token = Sys.getenv("SLACK_API_TOKEN"))
+slack_reprex(..., text = NULL, channel,
+  token = Sys.getenv("SLACK_API_TOKEN"))
 }
 \arguments{
 \item{...}{PARAM_DESCRIPTION}
