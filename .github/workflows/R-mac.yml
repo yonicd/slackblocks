@@ -38,10 +38,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-        install.packages('remotes')
-        remotes::install_github('hadley/emo')
-        remotes::install_deps(dependencies = TRUE)
-        remotes::install_cran('rcmdcheck')
+          install.packages('remotes')
+          remotes::install_github('hadley/emo')
+          remotes::install_deps(dependencies = TRUE)
+          remotes::install_cran('rcmdcheck')
         shell: Rscript {0}
 
       - name: Check
