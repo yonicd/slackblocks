@@ -23,6 +23,23 @@ knitr::opts_chunk$set(
 [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2020_02_06-brightgreen.svg)](http://tinyurl.com/tf2xf4d)
 <!-- badges: end -->
 
+`slackblocks` is a part of `slackverse`
+
+```{r,echo = FALSE}
+pkgs <- sprintf('slack%s',c('calls','teams','blocks','threads','reprex'))
+
+badges <- sprintf('%s<br>[![](https://github.com/yonicd/%s/workflows/R-mac/badge.svg)](https://github.com/yonicd/%s)',pkgs,pkgs,pkgs)
+
+names(badges) <- pkgs
+
+```
+
+||||
+|:-:|:-:|:-:|
+||`r badges[pkgs[1]]`<br>`r emo::ji('down_left_arrow')``r emo::ji('down_arrow')``r emo::ji('down_right_arrow')`||
+|`r badges[pkgs[4]]`|`r badges[pkgs[2]]`<br>`r emo::ji('left_arrow')``r emo::ji('right_arrow')`|`r badges[pkgs[3]]`<br>`r emo::ji('down_arrow')`|
+|||`r badges[pkgs[5]]`|
+
 The goal of slackblocks is to build Slack block elements in `R`.
 
 ## Installation
