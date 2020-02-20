@@ -4,12 +4,8 @@
 \alias{block_text}
 \title{Create a block for text}
 \usage{
-block_text(
-  text,
-  type = c("mrkdwn", "plain-text"),
-  emoji = NULL,
-  verbatim = NULL
-)
+block_text(text, type = c("mrkdwn", "plain-text"), emoji = NULL,
+  verbatim = NULL)
 }
 \arguments{
 \item{text}{PARAM_DESCRIPTION}

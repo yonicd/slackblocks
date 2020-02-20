@@ -84,6 +84,22 @@ parse_link <- function(message_link){
   list(thread_ts = thread_ts, channel = channel)
 }
 
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param channel PARAM_DESCRIPTION
+#' @param ts PARAM_DESCRIPTION, Default: NULL
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @seealso 
+#'  \code{\link[slackteams]{validate_channel}}
+#' @rdname prep_channel
+#' @export 
 #' @importFrom slackteams validate_channel
 prep_channel <- function(channel, ts = NULL){
   
