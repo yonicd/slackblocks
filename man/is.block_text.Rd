@@ -11,7 +11,7 @@ is.block_text(x, ...)
 
 \method{as.block_text}{block_text}(x, ...)
 
-\method{as.block_text}{NULL}(x, ...)
+\method{as.block_text}{`NULL`}(x, ...)
 
 \method{as.block_text}{character}(x, ...)
 }

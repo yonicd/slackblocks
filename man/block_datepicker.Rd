@@ -4,8 +4,7 @@
 \alias{block_datepicker}
 \title{FUNCTION_TITLE}
 \usage{
-block_datepicker(id, placeholder = NULL, initial_date = NULL,
-  confirm = NULL)
+block_datepicker(id, placeholder = NULL, initial_date = NULL, confirm = NULL)
 }
 \arguments{
 \item{id}{PARAM_DESCRIPTION}

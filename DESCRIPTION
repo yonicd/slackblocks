@@ -1,6 +1,6 @@
 Package: slackblocks
 Title: Slack Blocks API for R
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
     person(given = "Jonathan",
            family = "Sidi",
