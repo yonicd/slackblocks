@@ -2,32 +2,36 @@
 % Please edit documentation in R/compositions.R
 \name{block_confirm}
 \alias{block_confirm}
-\title{FUNCTION_TITLE}
+\title{Confirmation dialog object}
 \usage{
 block_confirm(title, text, confirm, deny)
 }
 \arguments{
-\item{title}{PARAM_DESCRIPTION}
+\item{title}{character, dialog's title}
 
-\item{text}{PARAM_DESCRIPTION}
+\item{text}{block_text, the explanatory text that
+appears in the confirm dialog}
 
-\item{confirm}{PARAM_DESCRIPTION}
+\item{confirm}{character, text of the button that
+confirms the action.}
 
-\item{deny}{PARAM_DESCRIPTION}
+\item{deny}{character, text of the button that
+cancels the action.}
 }
 \value{
-OUTPUT_DESCRIPTION
+block_confirm class
 }
 \description{
-FUNCTION_DESCRIPTION
-}
-\details{
-DETAILS
+An object that defines a dialog that provides
+a confirmation step to any interactive element.
+This dialog will ask the user to confirm their action
+by offering a confirm and deny buttons.
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
+block_confirm(
+  title = "Are you sure?",
+  text = block_text("Wouldn't you prefer a good game of _chess_?"),
+  confirm = "Do it",
+  deny = "Stop, I've changed my mind!"
+)
 }

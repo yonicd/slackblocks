@@ -2,32 +2,32 @@
 % Please edit documentation in R/compositions.R
 \name{block_option}
 \alias{block_option}
-\title{FUNCTION_TITLE}
+\title{Create a block for options}
 \usage{
 block_option(text, value, description = NULL, url = NULL)
 }
 \arguments{
-\item{text}{PARAM_DESCRIPTION}
+\item{text}{character, text that defines the text
+shown in the option on the menu.}
 
-\item{value}{PARAM_DESCRIPTION}
+\item{value}{character, The string value that will be
+passed to your app when this option is chosen.}
 
-\item{description}{PARAM_DESCRIPTION, Default: NULL}
+\item{description}{character, text that defines a line
+of descriptive text shown below the  text field beside
+the radio button. Default: NULL}
 
-\item{url}{PARAM_DESCRIPTION, Default: NULL}
+\item{url}{character, A URL to load in the user's browser
+when the option is clicked. Default: NULL}
 }
 \value{
-OUTPUT_DESCRIPTION
+block_option class
 }
 \description{
-FUNCTION_DESCRIPTION
-}
-\details{
-DETAILS
+An object that represents a single selectable item
+in a select menu, multi-select menu, radio button group,
+or overflow menu.
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
+block_option(text = 'Maru',value = 'maru')
 }

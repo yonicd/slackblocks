@@ -13,6 +13,7 @@
 #'  }
 #' }
 #' @rdname block_section
+#' @concept layout
 #' @export 
 block_section <- function(text, id = NULL, fields = NULL, accessory = NULL){
   
@@ -40,6 +41,7 @@ block_section <- function(text, id = NULL, fields = NULL, accessory = NULL){
 #'  }
 #' }
 #' @rdname block_context
+#' @concept layout
 #' @export 
 block_context <- function(elements, id = NULL){
   
@@ -52,18 +54,15 @@ block_context <- function(elements, id = NULL){
   structure(compact(payload),class = c('block','block_context','list')) 
 }
 
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
-#' @param id PARAM_DESCRIPTION, Default: NULL
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
+#' @title Divider Block
+#' @description A content divider, like an hr HTML DOM, 
+#' to split up different blocks inside of a message.
+#' @param id character, unique identifier for a block. Default: NULL
+#' @return block_divider class
 #' @examples 
-#' \dontrun{
-#' if(interactive()){
-#'  #EXAMPLE1
-#'  }
-#' }
+#' block_divider()
 #' @rdname block_divider
+#' @concept layout
 #' @export 
 
 block_divider <- function(id = NULL){

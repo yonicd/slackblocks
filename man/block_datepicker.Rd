@@ -2,29 +2,40 @@
 % Please edit documentation in R/elements.R
 \name{block_datepicker}
 \alias{block_datepicker}
-\title{FUNCTION_TITLE}
+\title{Date picker element}
 \usage{
 block_datepicker(id, placeholder = NULL, initial_date = NULL, confirm = NULL)
 }
 \arguments{
-\item{id}{PARAM_DESCRIPTION}
+\item{id}{An identifier for the action triggered
+when a menu option is selected.}
 
-\item{placeholder}{PARAM_DESCRIPTION, Default: NULL}
+\item{placeholder}{character, placeholder text shown on the datepicker. Default: NULL}
 
-\item{initial_date}{PARAM_DESCRIPTION, Default: NULL}
+\item{initial_date}{Date, The initial date that is
+selected when the element is loaded.
+This should be in the \link[base:strftime]{strftime}
+format '\%Y-\%m-\%d'. Default: NULL}
 
-\item{confirm}{PARAM_DESCRIPTION, Default: NULL}
+\item{confirm}{block_confirm, defines an optional
+confirmation dialog after the button is clicked. Default: NULL}
 }
 \value{
-OUTPUT_DESCRIPTION
+block_datepicker class
 }
 \description{
-FUNCTION_DESCRIPTION
+An element which lets users easily
+select a date from a calendar style UI.
 }
 \details{
-DETAILS
+\itemize{
+\item Works with block types: \emph{Section}, \emph{Actions}, \emph{Input}
+}
 }
 \examples{
 block_datepicker(id = 'datepicker123',initial_date = "1990-04-28", 
 placeholder = 'Select a date')
+}
+\seealso{
+\link[parsedate:parse_date]{parse_date}
 }

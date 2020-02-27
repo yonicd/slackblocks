@@ -6,33 +6,34 @@
 \usage{
 block_text(
   text,
-  type = c("mrkdwn", "plain-text"),
+  type = c("mrkdwn", "plain_text"),
   emoji = NULL,
   verbatim = NULL
 )
 }
 \arguments{
-\item{text}{PARAM_DESCRIPTION}
+\item{text}{character, the text for the block.}
 
-\item{type}{PARAM_DESCRIPTION, Default: c("mrkdwn", "plain-text")}
+\item{type}{character, type of block, Default: c("mrkdwn", "plain_text")}
 
-\item{emoji}{PARAM_DESCRIPTION, Default: NULL}
+\item{emoji}{logical, Indicates whether emojis in a text field should be
+escaped into the colon emoji format. This field is only usable
+when type is plain_text. Default: NULL}
 
-\item{verbatim}{PARAM_DESCRIPTION, Default: NULL}
+\item{verbatim}{When set to FALSE (Default value when NULL) URLs
+will be auto-converted into links, conversation names will be
+link-ified, and certain mentions will be automatically parsed.
+Default: NULL}
 }
 \value{
-OUTPUT_DESCRIPTION
+block_text class
 }
 \description{
 Create slack block that contains text
 }
 \details{
-DETAILS
+For more details see \href{https://api.slack.com/reference/block-kit/composition-objects#text}{slack documentation}
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
+block_text('A message *with some bold text* and _some italicized text_.')
 }

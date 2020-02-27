@@ -2,26 +2,21 @@
 % Please edit documentation in R/layout.R
 \name{block_divider}
 \alias{block_divider}
-\title{FUNCTION_TITLE}
+\title{Divider Block}
 \usage{
 block_divider(id = NULL)
 }
 \arguments{
-\item{id}{PARAM_DESCRIPTION, Default: NULL}
+\item{id}{character, unique identifier for a block. Default: NULL}
 }
 \value{
-OUTPUT_DESCRIPTION
+block_divider class
 }
 \description{
-FUNCTION_DESCRIPTION
-}
-\details{
-DETAILS
+A content divider, like an hr HTML DOM,
+to split up different blocks inside of a message.
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
+block_divider()
 }
-}
+\concept{layout}

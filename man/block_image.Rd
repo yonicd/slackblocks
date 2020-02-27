@@ -2,28 +2,41 @@
 % Please edit documentation in R/elements.R
 \name{block_image}
 \alias{block_image}
-\title{FUNCTION_TITLE}
+\title{Image element}
 \usage{
-block_image(url = NULL, alt_text = "image")
+block_image(url = NULL, alt_text = "image", title = NULL, id = NULL)
 }
 \arguments{
-\item{url}{PARAM_DESCRIPTION, Default: NULL}
+\item{url}{character, URL of the image to be displayed, Default: NULL}
 
-\item{alt_text}{PARAM_DESCRIPTION, Default: 'image'}
+\item{alt_text}{character, text summary of the image, Default: 'image'}
+
+\item{title}{An optional title for the image, Default: NULL}
+
+\item{id}{character, unique identifier for a block, Default: NULL}
 }
 \value{
-OUTPUT_DESCRIPTION
+block_image class
 }
 \description{
-FUNCTION_DESCRIPTION
+A simple image block
 }
 \details{
-DETAILS
+\itemize{
+\item Works with block types: \emph{Section}, \emph{Context}
+}
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
+
+block_image(
+  url = 'http://placekitten.com/500/500',
+  alt_text = 'An incredibly cute kitten.'
+)
+
+block_image(
+  title = "Please enjoy this photo of a kitten",
+  id = 'image4',
+  url = 'http://placekitten.com/500/500',
+  alt_text = 'An incredibly cute kitten.'
+)
 }

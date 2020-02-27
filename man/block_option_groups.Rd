@@ -2,26 +2,49 @@
 % Please edit documentation in R/compositions.R
 \name{block_option_groups}
 \alias{block_option_groups}
-\title{FUNCTION_TITLE}
+\title{Group Option Blocks}
 \usage{
 block_option_groups(opts)
 }
 \arguments{
-\item{opts}{PARAM_DESCRIPTION}
+\item{opts}{list, A named list of option objects that belong to
+this specific group. Maximum of 100 items.}
 }
 \value{
-OUTPUT_DESCRIPTION
+block_option_groups class
 }
 \description{
-FUNCTION_DESCRIPTION
+Provides a way to group options in a
+select menu or multi-select menu.
 }
 \details{
-DETAILS
+if the input list is not named a templated name will be given
+in the form 'Group 01', 'Group 02', ...
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
+block_option_groups(
+list(
+  'Group 1' = list(
+  block_option(text = '*this is plain_text text*',value = 'value-0'),
+  block_option(text = '*this is plain_text text*',value = 'value-1'),
+  block_option(text = '*this is plain_text text*',value = 'value-2')
+  ),
+  'Group 2' = list(
+  block_option(text = '*this is plain_text text*',value = 'value-3')
+  )
+  )
+ )
+ 
+block_option_groups(
+list(
+  list(
+  block_option(text = '*this is plain_text text*',value = 'value-0'),
+  block_option(text = '*this is plain_text text*',value = 'value-1'),
+  block_option(text = '*this is plain_text text*',value = 'value-2')
+  ),
+  list(
+  block_option(text = '*this is plain_text text*',value = 'value-3')
+  )
+  )
+ )
 }

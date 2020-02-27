@@ -2,31 +2,44 @@
 % Please edit documentation in R/elements.R
 \name{block_button}
 \alias{block_button}
-\title{FUNCTION_TITLE}
+\title{Button element}
 \usage{
 block_button(id, text, value = NULL, url = NULL, style = NULL, confirm = NULL)
 }
 \arguments{
-\item{id}{PARAM_DESCRIPTION}
+\item{id}{character, An identifier for this action.}
 
-\item{text}{PARAM_DESCRIPTION}
+\item{text}{character, text of the button}
 
-\item{value}{PARAM_DESCRIPTION, Default: NULL}
+\item{value}{The value to send along with the interaction
+payload. Default: NULL}
 
-\item{url}{PARAM_DESCRIPTION, Default: NULL}
+\item{url}{character, A URL to load in the user's browser
+when the button is clicked. Default: NULL}
 
-\item{style}{PARAM_DESCRIPTION, Default: NULL}
+\item{style}{Decorates buttons with alternative visual
+color schemes, Default: NULL}
 
-\item{confirm}{PARAM_DESCRIPTION, Default: NULL}
+\item{confirm}{block_confirm, defines an optional
+confirmation dialog after the button is clicked. Default: NULL}
 }
 \value{
-OUTPUT_DESCRIPTION
+block_button class
 }
 \description{
-FUNCTION_DESCRIPTION
+An interactive component that inserts a button.
+The button can be a trigger for anything from opening a
+simple link to starting a complex workflow.
 }
 \details{
-DETAILS
+\itemize{
+\item Works with block types: \emph{Section}, \emph{Actions}
+\item \strong{primary} gives buttons a green outline and text, ideal for affirmation or confirmation actions.
+\item \strong{primary} should only be used for one button within a set.
+\item \strong{danger} gives buttons a red outline and text, and should be used when the action is destructive.
+\item Use \strong{danger} even more sparingly than primary.
+\item If you don't include this field, the \strong{default} button style will be used.
+}
 }
 \examples{
 # A regular interactive button:
