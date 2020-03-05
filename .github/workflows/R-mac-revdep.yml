@@ -50,7 +50,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Install payload
-        run: Rscript -e "remotes::install_github('${{ github.event.client_payload.repository) }}@${{ github.event.client_payload.sha) }}', force = TRUE)"
+        run: Rscript -e "remotes::install_github('${{ github.event.client_payload.repository) }}@${{ github.event.client_payload.sha }}', force = TRUE)"
 
       - name: Check
         run: Rscript -e "rcmdcheck::rcmdcheck(args = '${{ matrix.config.args }}', error_on = 'warning', check_dir = 'check')"
