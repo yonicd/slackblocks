@@ -37,3 +37,10 @@ For more details see \href{https://api.slack.com/reference/block-kit/composition
 \examples{
 block_text('A message *with some bold text* and _some italicized text_.')
 }
+\seealso{
+Other compositions: 
+\code{\link{block_confirm}()},
+\code{\link{block_option_groups}()},
+\code{\link{block_option}()}
+}
+\concept{compositions}

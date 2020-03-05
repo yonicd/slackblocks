@@ -40,3 +40,10 @@ block_image(
   alt_text = 'An incredibly cute kitten.'
 )
 }
+\seealso{
+Other elements: 
+\code{\link{block_button}()},
+\code{\link{block_datepicker}()},
+\code{\link{block_radio_buttons}()}
+}
+\concept{elements}

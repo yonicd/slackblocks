@@ -30,3 +30,10 @@ user to choose one item from a list of possible options.
 \item Works with block types: \emph{Section}, \emph{Actions}, \emph{Input}
 }
 }
+\seealso{
+Other elements: 
+\code{\link{block_button}()},
+\code{\link{block_datepicker}()},
+\code{\link{block_image}()}
+}
+\concept{elements}

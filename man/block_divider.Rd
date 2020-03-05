@@ -16,7 +16,17 @@ block_divider class
 A content divider, like an hr HTML DOM,
 to split up different blocks inside of a message.
 }
+\details{
+Available in surfaces: \emph{Modals}, \emph{Messages}, \emph{Home tabs}
+}
 \examples{
 block_divider()
+}
+\seealso{
+Other layout: 
+\code{\link{as.blocks}()},
+\code{\link{block_context}()},
+\code{\link{block_section}()},
+\code{\link{wrap_blocks}()}
 }
 \concept{layout}

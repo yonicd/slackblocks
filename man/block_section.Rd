@@ -2,33 +2,71 @@
 % Please edit documentation in R/layout.R
 \name{block_section}
 \alias{block_section}
-\title{FUNCTION_TITLE}
+\title{Section Block}
 \usage{
 block_section(text, id = NULL, fields = NULL, accessory = NULL)
 }
 \arguments{
-\item{text}{PARAM_DESCRIPTION}
+\item{text}{character, The text for the block, in the form of a text object.
+Maximum length for the text in this field is 3000 characters.}
 
-\item{id}{PARAM_DESCRIPTION, Default: NULL}
+\item{id}{character, A string acting as a unique identifier for a block.
+Default: NULL}
 
-\item{fields}{PARAM_DESCRIPTION, Default: NULL}
+\item{fields}{An array of text objects. Any text objects included with
+fields will be rendered in a compact format that allows for 2 columns
+of side-by-side text. Maximum number of items is 10., Default: NULL}
 
-\item{accessory}{PARAM_DESCRIPTION, Default: NULL}
+\item{accessory}{One of the available element objects. Default: NULL}
 }
 \value{
-OUTPUT_DESCRIPTION
+block_section class
 }
 \description{
-FUNCTION_DESCRIPTION
+A section is one of the most flexible blocks available, it can
+be used as a simple text block, in combination with text fields,
+or side-by-side with any of the available block elements.
 }
 \details{
-DETAILS
+Available in surfaces: \emph{Modals}, \emph{Messages}, \emph{Home tabs}
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
+block_section(
+  text = block_text(
+    text = "A message *with some bold text* and _some italicized text_."
+  )
+)
+
+block_section(
+  text = block_text(
+    text = "A message *with some bold text* and _some italicized text_."
+  ),
+  fields = wrap_blocks(
+  block_text(text = 'High'),
+  block_text(
+    type = 'plain_text',
+    text = 'string',
+    emoji = TRUE)
+  )
+)
+
+block_section(
+  text = block_text(
+    text = "*Sally* has requested you set the deadline for the Nano launch project"
+  ),
+  accessory = block_datepicker(
+    id = 'datepicker123',
+    initial_date = "1990-04-28", 
+    placeholder = 'Select a date'
+   )
+  )
+
 }
+\seealso{
+Other layout: 
+\code{\link{as.blocks}()},
+\code{\link{block_context}()},
+\code{\link{block_divider}()},
+\code{\link{wrap_blocks}()}
 }
 \concept{layout}

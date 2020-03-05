@@ -2,23 +2,20 @@
 % Please edit documentation in R/post.R
 \name{post_thread}
 \alias{post_thread}
-\title{FUNCTION_TITLE}
+\title{Post Block Element to Thread}
 \usage{
 post_thread(res, block)
 }
 \arguments{
-\item{res}{PARAM_DESCRIPTION}
+\item{res}{\link[httr:response]{response} from \link[slackblocks:post_block]{post_block}}
 
-\item{block}{PARAM_DESCRIPTION}
+\item{block}{block element(s)}
 }
 \value{
-OUTPUT_DESCRIPTION
+\link[httr:response]{response}
 }
 \description{
-FUNCTION_DESCRIPTION
-}
-\details{
-DETAILS
+Post block to slack channel thread
 }
 \examples{
 \dontrun{
@@ -27,3 +24,9 @@ if(interactive()){
  }
 }
 }
+\seealso{
+Other post: 
+\code{\link{post_block}()},
+\code{\link{prep_channel}()}
+}
+\concept{post}

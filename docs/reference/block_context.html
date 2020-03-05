@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FUNCTION_TITLE — block_context • slackblocks</title>
+<title>Context Block — block_context • slackblocks</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="FUNCTION_TITLE — block_context" />
-<meta property="og:description" content="FUNCTION_DESCRIPTION" />
+<meta property="og:title" content="Context Block — block_context" />
+<meta property="og:description" content="Displays message context, which can include both images and text." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -84,9 +84,17 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../articles/index.html">Articles</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="http://twitter.com/yoniceedee">
+    <span class="fa fa-lg fa-twitter"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -100,13 +108,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>FUNCTION_TITLE</h1>
+    <h1>Context Block</h1>
     
     <div class="hidden name"><code>block_context.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>FUNCTION_DESCRIPTION</p>
+    <p>Displays message context, which can include both images and text.</p>
     </div>
 
     <pre class="usage"><span class='fu'>block_context</span>(<span class='no'>elements</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -120,23 +128,50 @@
     </tr>
     <tr>
       <th>id</th>
-      <td><p>PARAM_DESCRIPTION, Default: NULL</p></td>
+      <td><p>character, A string acting as a unique identifier for a block.
+Default: NULL</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>OUTPUT_DESCRIPTION</p>
+    <p>block_context class</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>DETAILS</p>
+    <p>Available in surfaces: <em>Modals</em>, <em>Messages</em>, <em>Home tabs</em></p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other layout: 
+<code><a href='as.blocks.html'>as.blocks</a>()</code>,
+<code><a href='block_divider.html'>block_divider</a>()</code>,
+<code><a href='block_section.html'>block_section</a>()</code>,
+<code><a href='wrap_blocks.html'>wrap_blocks</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='kw'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){
- <span class='co'>#EXAMPLE1</span>
- }
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>block_context</span>(
+  <span class='kw'>elements</span> <span class='kw'>=</span> <span class='fu'><a href='wrap_blocks.html'>wrap_blocks</a></span>(
+    <span class='fu'><a href='block_image.html'>block_image</a></span>(
+      <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>'https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg'</span>,
+      <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>'images'</span>
+    ),
+    <span class='fu'><a href='block_text.html'>block_text</a></span>(
+      <span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>'Location: **Dogpatch**'</span>
+    )
+  )
+)</div><div class='output co'>#&gt; {
+#&gt;   "type": "context",
+#&gt;   "elements": [
+#&gt;     {
+#&gt;       "type": "image",
+#&gt;       "image_url": "https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg",
+#&gt;       "alt_text": "images"
+#&gt;     },
+#&gt;     {
+#&gt;       "type": "mrkdwn",
+#&gt;       "text": "Location: **Dogpatch**"
+#&gt;     }
+#&gt;   ]
+#&gt; } </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -144,6 +179,7 @@
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#details">Details</a></li>
+      <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

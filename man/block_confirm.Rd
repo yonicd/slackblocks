@@ -35,3 +35,10 @@ block_confirm(
   deny = "Stop, I've changed my mind!"
 )
 }
+\seealso{
+Other compositions: 
+\code{\link{block_option_groups}()},
+\code{\link{block_option}()},
+\code{\link{block_text}()}
+}
+\concept{compositions}

@@ -2,26 +2,24 @@
 % Please edit documentation in R/layout.R
 \name{as.blocks}
 \alias{as.blocks}
-\title{FUNCTION_TITLE}
+\title{Coerce into Blocks}
 \usage{
 as.blocks(x)
 }
 \arguments{
-\item{x}{PARAM_DESCRIPTION}
+\item{x}{object}
 }
 \value{
-OUTPUT_DESCRIPTION
+block object
 }
 \description{
-FUNCTION_DESCRIPTION
+Turns existing object into block elements
 }
-\details{
-DETAILS
+\seealso{
+Other layout: 
+\code{\link{block_context}()},
+\code{\link{block_divider}()},
+\code{\link{block_section}()},
+\code{\link{wrap_blocks}()}
 }
-\examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
-}
+\concept{layout}

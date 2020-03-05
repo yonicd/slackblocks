@@ -32,6 +32,7 @@
 #' block_button(text = 'Link Button', url = 'https://api.slack.com/block-kit', id = 'button')
 #' 
 #' @rdname block_button
+#' @family elements
 #' @export 
 
 block_button <- function(id,
@@ -80,6 +81,7 @@ block_button <- function(id,
 #' placeholder = 'Select a date')
 #' @seealso [parse_date][parsedate::parse_date]
 #' @rdname block_datepicker
+#' @family elements
 #' @importFrom parsedate parse_date
 #' @export 
 block_datepicker <- function(id, 
@@ -124,6 +126,7 @@ block_datepicker <- function(id,
 #'   alt_text = 'An incredibly cute kitten.'
 #' )
 #' @rdname block_image
+#' @family elements
 #' @export 
 
 block_image <- function(url = NULL, alt_text = 'image', title = NULL, id = NULL){
@@ -159,6 +162,7 @@ block_image <- function(url = NULL, alt_text = 'image', title = NULL, id = NULL)
 #'   - Works with block types: *Section*, *Actions*, *Input*
 #' 
 #' @rdname block_radio_buttons
+#' @family elements
 #' @export 
 #' @importFrom checkmate check_class
 block_radio_buttons <- function(id, opts, initial_options = NULL, confirm = NULL){

@@ -53,3 +53,10 @@ block_button(text = 'Click Me', value = 'click_me_123', id = 'button',style = 'p
 block_button(text = 'Link Button', url = 'https://api.slack.com/block-kit', id = 'button')
 
 }
+\seealso{
+Other elements: 
+\code{\link{block_datepicker}()},
+\code{\link{block_image}()},
+\code{\link{block_radio_buttons}()}
+}
+\concept{elements}

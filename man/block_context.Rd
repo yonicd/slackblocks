@@ -2,29 +2,43 @@
 % Please edit documentation in R/layout.R
 \name{block_context}
 \alias{block_context}
-\title{FUNCTION_TITLE}
+\title{Context Block}
 \usage{
 block_context(elements, id = NULL)
 }
 \arguments{
 \item{elements}{An array of image elements and text objects. Maximum number of items is 10.}
 
-\item{id}{PARAM_DESCRIPTION, Default: NULL}
+\item{id}{character, A string acting as a unique identifier for a block.
+Default: NULL}
 }
 \value{
-OUTPUT_DESCRIPTION
+block_context class
 }
 \description{
-FUNCTION_DESCRIPTION
+Displays message context, which can include both images and text.
 }
 \details{
-DETAILS
+Available in surfaces: \emph{Modals}, \emph{Messages}, \emph{Home tabs}
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
+block_context(
+  elements = wrap_blocks(
+    block_image(
+      url = 'https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg',
+      alt_text = 'images'
+    ),
+    block_text(
+      text = 'Location: **Dogpatch**'
+    )
+  )
+)
 }
+\seealso{
+Other layout: 
+\code{\link{as.blocks}()},
+\code{\link{block_divider}()},
+\code{\link{block_section}()},
+\code{\link{wrap_blocks}()}
 }
 \concept{layout}

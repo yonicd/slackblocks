@@ -48,3 +48,10 @@ list(
   )
  )
 }
+\seealso{
+Other compositions: 
+\code{\link{block_confirm}()},
+\code{\link{block_option}()},
+\code{\link{block_text}()}
+}
+\concept{compositions}

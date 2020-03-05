@@ -38,4 +38,10 @@ placeholder = 'Select a date')
 }
 \seealso{
 \link[parsedate:parse_date]{parse_date}
+
+Other elements: 
+\code{\link{block_button}()},
+\code{\link{block_image}()},
+\code{\link{block_radio_buttons}()}
 }
+\concept{elements}

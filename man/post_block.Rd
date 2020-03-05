@@ -2,7 +2,7 @@
 % Please edit documentation in R/post.R
 \name{post_block}
 \alias{post_block}
-\title{FUNCTION_TITLE}
+\title{Post Block Element}
 \usage{
 post_block(
   block,
@@ -12,23 +12,20 @@ post_block(
 )
 }
 \arguments{
-\item{block}{PARAM_DESCRIPTION}
+\item{block}{block element(s)}
 
 \item{channel}{character, Channel ID, label or a URL link to a message}
 
 \item{thread_ts}{character slack api timestamp of the format
 xxxxxxxxxx.xxxxxx, Default: NULL}
 
-\item{token}{PARAM_DESCRIPTION, Default: Sys.getenv("SLACK_API_TOKEN")}
+\item{token}{Slack API token, Default: Sys.getenv("SLACK_API_TOKEN")}
 }
 \value{
-OUTPUT_DESCRIPTION
+\link[httr:response]{response}
 }
 \description{
-FUNCTION_DESCRIPTION
-}
-\details{
-DETAILS
+Post block to slack channel
 }
 \examples{
 \dontrun{
@@ -39,4 +36,9 @@ if(interactive()){
 }
 \seealso{
 \code{\link[slackcalls]{post_slack}}
+
+Other post: 
+\code{\link{post_thread}()},
+\code{\link{prep_channel}()}
 }
+\concept{post}

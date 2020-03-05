@@ -14,6 +14,7 @@
 #' @examples 
 #' block_text('A message *with some bold text* and _some italicized text_.')
 #' @rdname block_text
+#' @family compositions
 #' @export 
 
 block_text <- function(text, type = c('mrkdwn', 'plain_text'), emoji = NULL, verbatim = NULL){
@@ -21,8 +22,8 @@ block_text <- function(text, type = c('mrkdwn', 'plain_text'), emoji = NULL, ver
   payload <- list(
     type = match.arg(type,c('mrkdwn', 'plain_text')),
     text = text,
-    emoji = yesno(emoji),
-    verbatim = yesno(verbatim)
+    emoji = emoji,
+    verbatim = verbatim
   )
   
   structure(compact(payload),class = c('block','block_text','list'))
@@ -47,6 +48,7 @@ block_text <- function(text, type = c('mrkdwn', 'plain_text'), emoji = NULL, ver
 #' @examples 
 #' block_option(text = 'Maru',value = 'maru')
 #' @rdname block_option
+#' @family compositions
 #' @export 
 
 block_option <- function(text, value, description = NULL, url = NULL){
@@ -101,6 +103,7 @@ block_option <- function(text, value, description = NULL, url = NULL){
 #'   )
 #'  )
 #' @rdname block_option_groups
+#' @family compositions
 #' @export 
 
 block_option_groups <- function(opts){
@@ -140,6 +143,7 @@ block_option_groups <- function(opts){
 #'   deny = "Stop, I've changed my mind!"
 #' )
 #' @rdname block_confirm
+#' @family compositions
 #' @importFrom checkmate check_class
 #' @export 
 

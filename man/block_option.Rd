@@ -31,3 +31,10 @@ or overflow menu.
 \examples{
 block_option(text = 'Maru',value = 'maru')
 }
+\seealso{
+Other compositions: 
+\code{\link{block_confirm}()},
+\code{\link{block_option_groups}()},
+\code{\link{block_text}()}
+}
+\concept{compositions}

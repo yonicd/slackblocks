@@ -1,12 +1,11 @@
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
-#' @param block PARAM_DESCRIPTION
+#' @title Post Block Element
+#' @description Post block to slack channel
+#' @param block block element(s)
 #' @param channel character, Channel ID, label or a URL link to a message
 #' @param thread_ts character slack api timestamp of the format 
 #' xxxxxxxxxx.xxxxxx, Default: NULL
-#' @param token PARAM_DESCRIPTION, Default: Sys.getenv("SLACK_API_TOKEN")
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
+#' @param token Slack API token, Default: Sys.getenv("SLACK_API_TOKEN")
+#' @return [response][httr::response]
 #' @examples 
 #' \dontrun{
 #' if(interactive()){
@@ -15,6 +14,7 @@
 #' }
 #' @seealso 
 #'  \code{\link[slackcalls]{post_slack}}
+#' @family post
 #' @rdname post_block
 #' @export 
 post_block <- function(block, channel, thread_ts = NULL, token = Sys.getenv('SLACK_API_TOKEN')){
@@ -23,12 +23,11 @@ post_block <- function(block, channel, thread_ts = NULL, token = Sys.getenv('SLA
 
 }
 
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
-#' @param res PARAM_DESCRIPTION
-#' @param block PARAM_DESCRIPTION
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
+#' @title Post Block Element to Thread
+#' @description Post block to slack channel thread
+#' @param res [response][httr::response] from [post_block][slackblocks::post_block]
+#' @param block block element(s)
+#' @return [response][httr::response]
 #' @examples 
 #' \dontrun{
 #' if(interactive()){
@@ -36,6 +35,7 @@ post_block <- function(block, channel, thread_ts = NULL, token = Sys.getenv('SLA
 #'  }
 #' }
 #' @rdname post_thread
+#' @family post
 #' @export 
 post_thread <- function(res,block){
   post_block(block = block, channel = res$channel, thread_ts = res$ts, token = attr(res,'body')[['token']])
@@ -91,12 +91,17 @@ parse_link <- function(message_link){
   list(thread_ts = thread_ts, channel = channel)
 }
 
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
-#' @param channel PARAM_DESCRIPTION
-#' @param ts PARAM_DESCRIPTION, Default: NULL
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
+#' @title Prepare Channel
+#' @description Function that will parse multiple types of channel inputs.
+#' @param channel character
+#' @param ts character slack api timestamp of the format 
+#' xxxxxxxxxx.xxxxxx, Default: NULL
+#' @return channel
+#' @details 
+#'   channel can be either
+#'     - channel label
+#'     - channel id
+#'     - link to a message from slack
 #' @examples 
 #' \dontrun{
 #' if(interactive()){
@@ -107,6 +112,7 @@ parse_link <- function(message_link){
 #'  \code{\link[slackteams]{validate_channel}}
 #' @rdname prep_channel
 #' @export 
+#' @family post
 #' @importFrom slackteams validate_channel
 prep_channel <- function(channel, ts = NULL){
   
@@ -126,7 +132,11 @@ prep_channel <- function(channel, ts = NULL){
 
   channel <- slackteams::validate_channel(channel)
   
-  structure(channel, class = c(sprintf('post_%s',type),'channel','character'), thread_ts = ts)
+  structure(
+    channel, 
+    class = c(sprintf('post_%s',type),'channel','character'), 
+    thread_ts = ts
+  )
   
 }
 

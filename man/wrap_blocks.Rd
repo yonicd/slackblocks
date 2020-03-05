@@ -2,26 +2,35 @@
 % Please edit documentation in R/layout.R
 \name{wrap_blocks}
 \alias{wrap_blocks}
-\title{FUNCTION_TITLE}
+\title{Array of blocks}
 \usage{
 wrap_blocks(...)
 }
 \arguments{
-\item{...}{PARAM_DESCRIPTION}
+\item{...}{block elements}
 }
 \value{
-OUTPUT_DESCRIPTION
+list of blocks elements
 }
 \description{
-FUNCTION_DESCRIPTION
-}
-\details{
-DETAILS
+wrap block class objects in a list
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
+wrap_blocks(
+    block_image(
+      url = 'https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg',
+      alt_text = 'images'
+    ),
+    block_text(
+      text = 'Location: **Dogpatch**'
+    )
+  )
 }
+\seealso{
+Other layout: 
+\code{\link{as.blocks}()},
+\code{\link{block_context}()},
+\code{\link{block_divider}()},
+\code{\link{block_section}()}
 }
+\concept{layout}

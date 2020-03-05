@@ -2,23 +2,27 @@
 % Please edit documentation in R/post.R
 \name{prep_channel}
 \alias{prep_channel}
-\title{FUNCTION_TITLE}
+\title{Prepare Channel}
 \usage{
 prep_channel(channel, ts = NULL)
 }
 \arguments{
-\item{channel}{PARAM_DESCRIPTION}
+\item{channel}{character}
 
-\item{ts}{PARAM_DESCRIPTION, Default: NULL}
+\item{ts}{character slack api timestamp of the format
+xxxxxxxxxx.xxxxxx, Default: NULL}
 }
 \value{
-OUTPUT_DESCRIPTION
+channel
 }
 \description{
-FUNCTION_DESCRIPTION
+Function that will parse multiple types of channel inputs.
 }
 \details{
-DETAILS
+channel can be either
+- channel label
+- channel id
+- link to a message from slack
 }
 \examples{
 \dontrun{
@@ -29,4 +33,9 @@ if(interactive()){
 }
 \seealso{
 \code{\link[slackteams]{validate_channel}}
+
+Other post: 
+\code{\link{post_block}()},
+\code{\link{post_thread}()}
 }
+\concept{post}
