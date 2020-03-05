@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-27 February, 2020 02:42:52
+05 March, 2020 11:15:11
 
   - [Coverage](#coverage)
   - [Unit Tests](#unit-tests)
@@ -31,7 +31,7 @@ Unit Test summary is created using the
 
 | file                                  | n |  time | error | failed | skipped | warning |
 | :------------------------------------ | -: | ----: | ----: | -----: | ------: | ------: |
-| [test-check.R](testthat/test-check.R) | 1 | 0.031 |     0 |      0 |       0 |       0 |
+| [test-check.R](testthat/test-check.R) | 1 | 0.032 |     0 |      0 |       0 |       0 |
 
 <details closed>
 
@@ -39,7 +39,7 @@ Unit Test summary is created using the
 
 | file                                     | context | test                 | status | n |  time |
 | :--------------------------------------- | :------ | :------------------- | :----- | -: | ----: |
-| [test-check.R](testthat/test-check.R#L2) | check   | multiplication works | PASS   | 1 | 0.031 |
+| [test-check.R](testthat/test-check.R#L2) | check   | multiplication works | PASS   | 1 | 0.032 |
 
 </details>
 
@@ -50,14 +50,14 @@ Unit Test summary is created using the
 | Field    | Value                               |                                                                                                                                                                                                                                                                     |
 | :------- | :---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version  | R version 3.6.2 (2019-12-12)        |                                                                                                                                                                                                                                                                     |
-| Platform | x86\_64-apple-darwin15.6.0 (64-bit) | <a href="https://github.com/yonicd/slackblocks/commit/fcca9a7a108929b6ed5539c7836cb08a1c4e55cb/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
+| Platform | x86\_64-apple-darwin15.6.0 (64-bit) | <a href="https://github.com/yonicd/slackblocks/commit/bd07179b1ec8f42994f33b07f8c4d630b985d4a8/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
 | Running  | macOS Catalina 10.15.3              |                                                                                                                                                                                                                                                                     |
 | Language | en\_US                              |                                                                                                                                                                                                                                                                     |
 | Timezone | UTC                                 |                                                                                                                                                                                                                                                                     |
 
 | Package  | Version |
 | :------- | :------ |
-| testthat | 2.3.1   |
+| testthat | 2.3.2   |
 | covr     | 3.4.0   |
 | covrpage | 0.0.71  |
 
