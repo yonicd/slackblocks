@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Array of blocks — wrap_blocks • slackblocks</title>
+<title>Plain-text input element — plaintext_element • slackblocks</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,11 @@
 
 
 
-<meta property="og:title" content="Array of blocks — wrap_blocks" />
-<meta property="og:description" content="wrap block class objects in a list" />
+<meta property="og:title" content="Plain-text input element — plaintext_element" />
+<meta property="og:description" content="A plain-text input, similar to the HTML input tag,
+creates a field where a user can enter freeform data.
+It can appear as a single-line field or a larger textarea
+using the multiline flag." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -114,67 +117,99 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Array of blocks</h1>
+    <h1>Plain-text input element</h1>
     
-    <div class="hidden name"><code>wrap_blocks.Rd</code></div>
+    <div class="hidden name"><code>plaintext_element.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>wrap block class objects in a list</p>
+    <p>A plain-text input, similar to the HTML input tag,
+creates a field where a user can enter freeform data.
+It can appear as a single-line field or a larger textarea
+using the multiline flag.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wrap_blocks</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>plaintext_element</span>(
+  <span class='no'>id</span>,
+  <span class='no'>placeholder</span>,
+  <span class='kw'>initial_value</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>multiline</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>min_length</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>max_length</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>block elements</p></td>
+      <th>id</th>
+      <td><p>character, an identifier for the input value when the parent modal
+is submitted.</p></td>
+    </tr>
+    <tr>
+      <th>placeholder</th>
+      <td><p>character, A text object that defines the placeholder text
+shown in the plain-text input.</p></td>
+    </tr>
+    <tr>
+      <th>initial_value</th>
+      <td><p>character, the initial value in the plain-text
+input when it is loaded. Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>multiline</th>
+      <td><p>logical, indicates whether the input will be a single
+line (FALSE) or a larger textarea (TRUE). Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>min_length</th>
+      <td><p>integer, the minimum length of input that the user must
+provide. If the user provides less, they will receive an error. Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>max_length</th>
+      <td><p>integer, The maximum length of input that the user can provide.
+If the user provides more, they will receive an error in the response. Default: NULL</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list of blocks elements</p>
+    <p>block element object</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Works with block types: <em>Section</em>, <em>Actions</em>, <em>Input</em></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other layout: 
-<code><a href='actions_block.html'>actions_block</a>()</code>,
-<code><a href='as.blocks.html'>as.blocks</a>()</code>,
-<code><a href='context_block.html'>context_block</a>()</code>,
-<code><a href='divider_block.html'>divider_block</a>()</code>,
-<code><a href='block_file.html'>file_block</a>()</code>,
-<code><a href='image_block.html'>image_block</a>()</code>,
-<code><a href='input_block.html'>input_block</a>()</code>,
-<code><a href='section_block.html'>section_block</a>()</code></p></div>
+    <div class='dont-index'><p>Other elements: 
+<code><a href='button_element.html'>button_element</a>()</code>,
+<code><a href='checkbox_element.html'>checkbox_element</a>()</code>,
+<code><a href='datepicker_element.html'>datepicker_element</a>()</code>,
+<code><a href='image_element.html'>image_element</a>()</code>,
+<code><a href='overflow_menu.html'>overflow_menu</a>()</code>,
+<code><a href='radiobuttons_element.html'>radiobuttons_element</a>()</code>,
+<code><a href='select_menu.html'>select_menu</a>()</code>,
+<code><a href='select_type_menu.html'>select_type_menu</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>wrap_blocks</span>(
-    <span class='fu'><a href='image_element.html'>image_element</a></span>(
-      <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>'https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg'</span>,
-      <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>'images'</span>
-    ),
-    <span class='fu'><a href='block_text.html'>block_text</a></span>(
-      <span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>'Location: **Dogpatch**'</span>
-    )
-  )</div><div class='output co'>#&gt; [
-#&gt;   {
-#&gt;     "type": "image",
-#&gt;     "image_url": "https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg",
-#&gt;     "alt_text": "images"
-#&gt;   },
-#&gt;   {
-#&gt;     "type": "mrkdwn",
-#&gt;     "text": "Location: **Dogpatch**"
+    <pre class="examples"><div class='input'><span class='fu'>plaintext_element</span>(
+  <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>'plain_input'</span>,
+  <span class='kw'>placeholder</span> <span class='kw'>=</span> <span class='st'>'Enter some plain text'</span>
+)</div><div class='output co'>#&gt; {
+#&gt;   "type": "plain_text_input",
+#&gt;   "action_id": "plain_input",
+#&gt;   "placeholder": {
+#&gt;     "type": "plain_text",
+#&gt;     "text": "Enter some plain text"
 #&gt;   }
-#&gt; ] </div></pre>
+#&gt; } </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>

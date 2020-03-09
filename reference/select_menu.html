@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Prepare Channel — prep_channel • slackblocks</title>
+<title>Select menu element — select_menu • slackblocks</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,11 @@
 
 
 
-<meta property="og:title" content="Prepare Channel — prep_channel" />
-<meta property="og:description" content="Function that will parse multiple types of channel inputs." />
+<meta property="og:title" content="Select menu element — select_menu" />
+<meta property="og:description" content="A select menu, just as with a standard HTML select tag,
+creates a drop down menu with a list of options for a user to choose.
+The select menu also includes type-ahead functionality,
+where a user can type a part or all of an option string to filter the list." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -114,53 +117,137 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Prepare Channel</h1>
+    <h1>Select menu element</h1>
     
-    <div class="hidden name"><code>prep_channel.Rd</code></div>
+    <div class="hidden name"><code>select_menu.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Function that will parse multiple types of channel inputs.</p>
+    <p>A select menu, just as with a standard HTML select tag,
+creates a drop down menu with a list of options for a user to choose.
+The select menu also includes type-ahead functionality,
+where a user can type a part or all of an option string to filter the list.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>prep_channel</span>(<span class='no'>channel</span>, <span class='kw'>ts</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>select_menu</span>(
+  <span class='no'>id</span>,
+  <span class='no'>placeholder</span>,
+  <span class='no'>options</span>,
+  <span class='kw'>option_groups</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>initial_option</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>confirm</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>max_select_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>channel</th>
-      <td><p>character</p></td>
+      <th>id</th>
+      <td><p>character, an identifier for the action triggered when a menu option is selected.</p></td>
     </tr>
     <tr>
-      <th>ts</th>
-      <td><p>character slack api timestamp of the format
-xxxxxxxxxx.xxxxxx, Default: NULL</p></td>
+      <th>placeholder</th>
+      <td><p>character, defines the placeholder text shown on the menu.</p></td>
+    </tr>
+    <tr>
+      <th>options</th>
+      <td><p>list, a list of option objects.</p></td>
+    </tr>
+    <tr>
+      <th>option_groups</th>
+      <td><p>a list of option group objects. Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>initial_option</th>
+      <td><p>a single option that exactly matches one of the
+options within options or option_groups, Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>confirm</th>
+      <td><p>A confirm object that defines an optional
+confirmation dialog that appears after a menu item is selected. Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>max_select_items</th>
+      <td><p>integer, Specifies the maximum number of items that can be selected in the menu, Default: NULL</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>channel</p>
+    <p>block menu class</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>channel can be either
-- channel label
-- channel id
-- link to a message from slack</p>
+    <p>Works with block types: <em>Section</em>, <em>Actions</em>, <em>Input</em></p>
+<p>If <code>options</code> is specified, then <code>option_groups</code> should not be and vice versa.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/slackteams/man/validate_channel.html'>validate_channel</a></code></p>
-<p>Other post: 
-<code><a href='post_block.html'>post_block</a>()</code>,
-<code><a href='post_thread.html'>post_thread</a>()</code></p></div>
+    <div class='dont-index'><p>Other elements: 
+<code><a href='button_element.html'>button_element</a>()</code>,
+<code><a href='checkbox_element.html'>checkbox_element</a>()</code>,
+<code><a href='datepicker_element.html'>datepicker_element</a>()</code>,
+<code><a href='image_element.html'>image_element</a>()</code>,
+<code><a href='overflow_menu.html'>overflow_menu</a>()</code>,
+<code><a href='plaintext_element.html'>plaintext_element</a>()</code>,
+<code><a href='radiobuttons_element.html'>radiobuttons_element</a>()</code>,
+<code><a href='select_type_menu.html'>select_type_menu</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='kw'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){
- <span class='co'>#EXAMPLE1</span>
- }
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='section_block.html'>section_block</a></span>(
+<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>'section678'</span>,
+<span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>'Pick an item from the dropdown list'</span>,
+<span class='kw'>accessory</span> <span class='kw'>=</span> <span class='fu'>select_menu</span>(
+ <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>'text1234'</span>,
+ <span class='kw'>placeholder</span> <span class='kw'>=</span> <span class='st'>'Select an item'</span>,
+ <span class='kw'>options</span> <span class='kw'>=</span> <span class='fu'><a href='as.blocks.html'>as.blocks</a></span>(
+   <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sprintf.html'>sprintf</a></span>(<span class='st'>'value-%d'</span>,<span class='fl'>1</span>:<span class='fl'>4</span>),<span class='no'>block_option</span>,
+     <span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>'*this is plain_text text*'</span>)
+   )
+ )
+)</div><div class='output co'>#&gt; {
+#&gt;   "type": "section",
+#&gt;   "text": "Pick an item from the dropdown list",
+#&gt;   "block_id": "section678",
+#&gt;   "accessory": {
+#&gt;     "type": "static_select",
+#&gt;     "action_id": "text1234",
+#&gt;     "placeholder": {
+#&gt;       "type": "plain_text",
+#&gt;       "text": "Select an item"
+#&gt;     },
+#&gt;     "options": [
+#&gt;       {
+#&gt;         "text": {
+#&gt;           "type": "plain_text",
+#&gt;           "text": "*this is plain_text text*"
+#&gt;         },
+#&gt;         "value": "value-1"
+#&gt;       },
+#&gt;       {
+#&gt;         "text": {
+#&gt;           "type": "plain_text",
+#&gt;           "text": "*this is plain_text text*"
+#&gt;         },
+#&gt;         "value": "value-2"
+#&gt;       },
+#&gt;       {
+#&gt;         "text": {
+#&gt;           "type": "plain_text",
+#&gt;           "text": "*this is plain_text text*"
+#&gt;         },
+#&gt;         "value": "value-3"
+#&gt;       },
+#&gt;       {
+#&gt;         "text": {
+#&gt;           "type": "plain_text",
+#&gt;           "text": "*this is plain_text text*"
+#&gt;         },
+#&gt;         "value": "value-4"
+#&gt;       }
+#&gt;     ]
+#&gt;   }
+#&gt; } </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Array of blocks — wrap_blocks • slackblocks</title>
+<title>Checkbox groups — checkbox_element • slackblocks</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,9 @@
 
 
 
-<meta property="og:title" content="Array of blocks — wrap_blocks" />
-<meta property="og:description" content="wrap block class objects in a list" />
+<meta property="og:title" content="Checkbox groups — checkbox_element" />
+<meta property="og:description" content="A checkbox group that allows a user to choose multiple
+items from a list of possible options." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -114,67 +115,124 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Array of blocks</h1>
+    <h1>Checkbox groups</h1>
     
-    <div class="hidden name"><code>wrap_blocks.Rd</code></div>
+    <div class="hidden name"><code>checkbox_element.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>wrap block class objects in a list</p>
+    <p>A checkbox group that allows a user to choose multiple
+items from a list of possible options.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wrap_blocks</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>checkbox_element</span>(<span class='no'>id</span>, <span class='no'>options</span>, <span class='kw'>initial_options</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>confirm</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>block elements</p></td>
+      <th>id</th>
+      <td><p>character, an identifier for the action triggered when the
+checkbox group is changed.</p></td>
+    </tr>
+    <tr>
+      <th>options</th>
+      <td><p>An list of block_option objects.</p></td>
+    </tr>
+    <tr>
+      <th>initial_options</th>
+      <td><p>An list of block_option objects that exactly
+matches one or more of the options within options. Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>confirm</th>
+      <td><p>A confirm object that defines an optional confirmation
+dialog that appears after clicking one of the checkboxes in this element.
+Default: NULL</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list of blocks elements</p>
+    <p>block element class</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Works with block types: <em>Section</em>, <em>Actions</em>, <em>Input</em></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other layout: 
-<code><a href='actions_block.html'>actions_block</a>()</code>,
-<code><a href='as.blocks.html'>as.blocks</a>()</code>,
-<code><a href='context_block.html'>context_block</a>()</code>,
-<code><a href='divider_block.html'>divider_block</a>()</code>,
-<code><a href='block_file.html'>file_block</a>()</code>,
-<code><a href='image_block.html'>image_block</a>()</code>,
-<code><a href='input_block.html'>input_block</a>()</code>,
-<code><a href='section_block.html'>section_block</a>()</code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/checkmate/man/checkClass.html'>checkClass</a></code></p>
+<p>Other elements: 
+<code><a href='button_element.html'>button_element</a>()</code>,
+<code><a href='datepicker_element.html'>datepicker_element</a>()</code>,
+<code><a href='image_element.html'>image_element</a>()</code>,
+<code><a href='overflow_menu.html'>overflow_menu</a>()</code>,
+<code><a href='plaintext_element.html'>plaintext_element</a>()</code>,
+<code><a href='radiobuttons_element.html'>radiobuttons_element</a>()</code>,
+<code><a href='select_menu.html'>select_menu</a>()</code>,
+<code><a href='select_type_menu.html'>select_type_menu</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>wrap_blocks</span>(
-    <span class='fu'><a href='image_element.html'>image_element</a></span>(
-      <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>'https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg'</span>,
-      <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>'images'</span>
-    ),
-    <span class='fu'><a href='block_text.html'>block_text</a></span>(
-      <span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>'Location: **Dogpatch**'</span>
-    )
-  )</div><div class='output co'>#&gt; [
-#&gt;   {
-#&gt;     "type": "image",
-#&gt;     "image_url": "https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg",
-#&gt;     "alt_text": "images"
-#&gt;   },
-#&gt;   {
-#&gt;     "type": "mrkdwn",
-#&gt;     "text": "Location: **Dogpatch**"
+    <pre class="examples"><div class='input'><span class='fu'><a href='section_block.html'>section_block</a></span>(
+<span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>'Check out these charming checkboxes'</span>,
+<span class='kw'>accessory</span> <span class='kw'>=</span> <span class='fu'>checkbox_element</span>(
+ <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>'my_checkbox'</span>,
+ <span class='kw'>options</span> <span class='kw'>=</span> <span class='fu'><a href='wrap_blocks.html'>wrap_blocks</a></span>(
+ <span class='fu'><a href='block_option.html'>block_option</a></span>(
+   <span class='kw'>value</span> <span class='kw'>=</span> <span class='st'>'A1'</span>,
+   <span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>'Checkbox 1'</span>
+ ),
+ <span class='fu'><a href='block_option.html'>block_option</a></span>(
+   <span class='kw'>value</span> <span class='kw'>=</span> <span class='st'>'A2'</span>,
+   <span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>'Checkbox 2'</span>
+ )
+ ),
+ <span class='kw'>initial_options</span> <span class='kw'>=</span> <span class='fu'><a href='wrap_blocks.html'>wrap_blocks</a></span>(
+   <span class='fu'><a href='block_option.html'>block_option</a></span>(
+     <span class='kw'>value</span> <span class='kw'>=</span> <span class='st'>'A1'</span>,
+     <span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>'Checkbox 1'</span>
+   )
+ )
+)
+)</div><div class='output co'>#&gt; {
+#&gt;   "type": "section",
+#&gt;   "text": "Check out these charming checkboxes",
+#&gt;   "accessory": {
+#&gt;     "type": "checkboxes",
+#&gt;     "action_id": "my_checkbox",
+#&gt;     "options": [
+#&gt;       {
+#&gt;         "text": {
+#&gt;           "type": "plain_text",
+#&gt;           "text": "Checkbox 1"
+#&gt;         },
+#&gt;         "value": "A1"
+#&gt;       },
+#&gt;       {
+#&gt;         "text": {
+#&gt;           "type": "plain_text",
+#&gt;           "text": "Checkbox 2"
+#&gt;         },
+#&gt;         "value": "A2"
+#&gt;       }
+#&gt;     ],
+#&gt;     "initial_options": [
+#&gt;       {
+#&gt;         "text": {
+#&gt;           "type": "plain_text",
+#&gt;           "text": "Checkbox 1"
+#&gt;         },
+#&gt;         "value": "A1"
+#&gt;       }
+#&gt;     ]
 #&gt;   }
-#&gt; ] </div></pre>
+#&gt; } </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>

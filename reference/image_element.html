@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Array of blocks — wrap_blocks • slackblocks</title>
+<title>Image element — image_element • slackblocks</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Array of blocks — wrap_blocks" />
-<meta property="og:description" content="wrap block class objects in a list" />
+<meta property="og:title" content="Image element — image_element" />
+<meta property="og:description" content="A simple image block" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -114,67 +114,92 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Array of blocks</h1>
+    <h1>Image element</h1>
     
-    <div class="hidden name"><code>wrap_blocks.Rd</code></div>
+    <div class="hidden name"><code>image_element.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>wrap block class objects in a list</p>
+    <p>A simple image block</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wrap_blocks</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>image_element</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>"image"</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>block elements</p></td>
+      <th>url</th>
+      <td><p>character, URL of the image to be displayed, Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>alt_text</th>
+      <td><p>character, text summary of the image, Default: 'image'</p></td>
+    </tr>
+    <tr>
+      <th>title</th>
+      <td><p>An optional title for the image, Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>id</th>
+      <td><p>character, unique identifier for a block, Default: NULL</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list of blocks elements</p>
+    <p>block element class</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    
+<ul>
+<li><p>Works with block types: <em>Section</em>, <em>Context</em></p></li>
+</ul>
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other layout: 
-<code><a href='actions_block.html'>actions_block</a>()</code>,
-<code><a href='as.blocks.html'>as.blocks</a>()</code>,
-<code><a href='context_block.html'>context_block</a>()</code>,
-<code><a href='divider_block.html'>divider_block</a>()</code>,
-<code><a href='block_file.html'>file_block</a>()</code>,
-<code><a href='image_block.html'>image_block</a>()</code>,
-<code><a href='input_block.html'>input_block</a>()</code>,
-<code><a href='section_block.html'>section_block</a>()</code></p></div>
+    <div class='dont-index'><p>Other elements: 
+<code><a href='button_element.html'>button_element</a>()</code>,
+<code><a href='checkbox_element.html'>checkbox_element</a>()</code>,
+<code><a href='datepicker_element.html'>datepicker_element</a>()</code>,
+<code><a href='overflow_menu.html'>overflow_menu</a>()</code>,
+<code><a href='plaintext_element.html'>plaintext_element</a>()</code>,
+<code><a href='radiobuttons_element.html'>radiobuttons_element</a>()</code>,
+<code><a href='select_menu.html'>select_menu</a>()</code>,
+<code><a href='select_type_menu.html'>select_type_menu</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>wrap_blocks</span>(
-    <span class='fu'><a href='image_element.html'>image_element</a></span>(
-      <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>'https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg'</span>,
-      <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>'images'</span>
-    ),
-    <span class='fu'><a href='block_text.html'>block_text</a></span>(
-      <span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>'Location: **Dogpatch**'</span>
-    )
-  )</div><div class='output co'>#&gt; [
-#&gt;   {
-#&gt;     "type": "image",
-#&gt;     "image_url": "https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg",
-#&gt;     "alt_text": "images"
+    <pre class="examples"><div class='input'>
+<span class='fu'>image_element</span>(
+  <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>'http://placekitten.com/500/500'</span>,
+  <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>'An incredibly cute kitten.'</span>
+)</div><div class='output co'>#&gt; {
+#&gt;   "type": "image",
+#&gt;   "image_url": "http://placekitten.com/500/500",
+#&gt;   "alt_text": "An incredibly cute kitten."
+#&gt; } </div><div class='input'>
+<span class='fu'>image_element</span>(
+  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Please enjoy this photo of a kitten"</span>,
+  <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>'image4'</span>,
+  <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>'http://placekitten.com/500/500'</span>,
+  <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>'An incredibly cute kitten.'</span>
+)</div><div class='output co'>#&gt; {
+#&gt;   "type": "image",
+#&gt;   "title": {
+#&gt;     "type": "plain_text",
+#&gt;     "text": "Please enjoy this photo of a kitten"
 #&gt;   },
-#&gt;   {
-#&gt;     "type": "mrkdwn",
-#&gt;     "text": "Location: **Dogpatch**"
-#&gt;   }
-#&gt; ] </div></pre>
+#&gt;   "block_id": "image4",
+#&gt;   "image_url": "http://placekitten.com/500/500",
+#&gt;   "alt_text": "An incredibly cute kitten."
+#&gt; } </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
