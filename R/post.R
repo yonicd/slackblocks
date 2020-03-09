@@ -146,7 +146,7 @@ prep_block <- function(block){
   if(!inherits(block,'blocks')){
     
     if(inherits(block,'block_text')){
-      block <- block_section(text = block)
+      block <- section_block(text = block)
     }
     
     block <- wrap_blocks(block)
