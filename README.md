@@ -52,7 +52,7 @@ slackblocks::block_text('my text')
 ```
 
 ``` r
-slackblocks::block_image('url_to_image')
+slackblocks::image_element('url_to_image')
 #> {
 #>   "type": "image",
 #>   "image_url": "url_to_image",
@@ -61,7 +61,7 @@ slackblocks::block_image('url_to_image')
 ```
 
 ``` r
-(b <- block_section(
+(b <- section_block(
   text = block_text(
     text = 'A message *with some bold text* and _some italicized text_.'),
   fields = list(
