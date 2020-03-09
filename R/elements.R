@@ -12,7 +12,7 @@
 #' color schemes, Default: NULL
 #' @param confirm block_confirm, defines an optional 
 #' confirmation dialog after the button is clicked. Default: NULL
-#' @return block_button class
+#' @return block element class
 #' @details 
 #'   - Works with block types: *Section*, *Actions*
 #'   - **primary** gives buttons a green outline and text, ideal for affirmation or confirmation actions. 
@@ -22,20 +22,20 @@
 #'   - If you don't include this field, the **default** button style will be used.
 #' @examples 
 #' # A regular interactive button:
-#' block_button(text = 'Click Me', value = 'click_me_123', id = 'button')
+#' button_element(text = 'Click Me', value = 'click_me_123', id = 'button')
 #' 
 #' # A button with a primary style attribute:
-#' block_button(text = 'Click Me', value = 'click_me_123', id = 'button',style = 'primary')
+#' button_element(text = 'Click Me', value = 'click_me_123', id = 'button',style = 'primary')
 #' 
 #' # A link button:
 #' 
-#' block_button(text = 'Link Button', url = 'https://api.slack.com/block-kit', id = 'button')
+#' button_element(text = 'Link Button', url = 'https://api.slack.com/block-kit', id = 'button')
 #' 
-#' @rdname block_button
+#' @rdname button_element
 #' @family elements
 #' @export 
 
-block_button <- function(id,
+button_element <- function(id,
                    text, 
                    value = NULL,
                    url = NULL, 
@@ -54,15 +54,72 @@ block_button <- function(id,
     confirm = confirm
   )
   
-  structure(compact(payload),class = c('block','block_button', 'list'))
+  structure(compact(payload),class = c('block','element', 'list'))
   
 }
 
+#' @title Checkbox groups
+#' @description A checkbox group that allows a user to choose multiple 
+#' items from a list of possible options.
+#' @param id character, an identifier for the action triggered when the 
+#' checkbox group is changed.
+#' @param options An list of block_option objects.
+#' @param initial_options An list of block_option objects that exactly 
+#' matches one or more of the options within options. Default: NULL
+#' @param confirm A confirm object that defines an optional confirmation
+#'  dialog that appears after clicking one of the checkboxes in this element.
+#'   Default: NULL
+#' @return block element class
+#' @details Works with block types: *Section*, *Actions*, *Input*
+#' @examples 
+#' section_block(
+#' text = 'Check out these charming checkboxes',
+#' accessory = checkbox_element(
+#'  id = 'my_checkbox',
+#'  options = wrap_blocks(
+#'  block_option(
+#'    value = 'A1',
+#'    text = 'Checkbox 1'
+#'  ),
+#'  block_option(
+#'    value = 'A2',
+#'    text = 'Checkbox 2'
+#'  )
+#'  ),
+#'  initial_options = wrap_blocks(
+#'    block_option(
+#'      value = 'A1',
+#'      text = 'Checkbox 1'
+#'    )
+#'  )
+#' )
+#' )
+#' @seealso 
+#'  \code{\link[checkmate]{checkClass}}
+#' @rdname checkbox_element
+#' @family elements
+#' @export 
+#' @importFrom checkmate check_class
+checkbox_element <- function(id, options, initial_options = NULL, confirm = NULL){
+  
+  checkmate::check_class(options,classes = 'block_option')
+  
+  payload <- list(
+    type = 'checkboxes',
+    action_id = id,
+    options = options,
+    initial_options = initial_options,
+    confirm = confirm
+  )
+  
+  structure(compact(payload),class = c('block','element', 'list'))
+  
+}
 
 #' @title Date picker element
 #' @description An element which lets users easily 
 #' select a date from a calendar style UI.
-#' @param id An identifier for the action triggered 
+#' @param id character, an identifier for the action triggered 
 #' when a menu option is selected.
 #' @param placeholder character, placeholder text shown on the datepicker. Default: NULL
 #' @param initial_date Date, The initial date that is 
@@ -71,20 +128,20 @@ block_button <- function(id,
 #' format '%Y-%m-%d'. Default: NULL
 #' @param confirm block_confirm, defines an optional 
 #' confirmation dialog after the button is clicked. Default: NULL
-#' @return block_datepicker class
+#' @return block element class
 #' @details 
 #' 
 #'   - Works with block types: *Section*, *Actions*, *Input*
 #' 
 #' @examples 
-#' block_datepicker(id = 'datepicker123',initial_date = "1990-04-28", 
+#' datepicker_element(id = 'datepicker123',initial_date = "1990-04-28", 
 #' placeholder = 'Select a date')
 #' @seealso [parse_date][parsedate::parse_date]
-#' @rdname block_datepicker
+#' @rdname datepicker_element
 #' @family elements
 #' @importFrom parsedate parse_date
 #' @export 
-block_datepicker <- function(id, 
+datepicker_element <- function(id, 
                              placeholder = NULL,
                              initial_date = NULL,
                              confirm = NULL){
@@ -97,7 +154,7 @@ block_datepicker <- function(id,
     confirm = confirm
   )
   
-  structure(compact(payload),class = c('block','block_datepicker','list'))
+  structure(compact(payload),class = c('block','element','list'))
   
 }
 
@@ -107,29 +164,29 @@ block_datepicker <- function(id,
 #' @param alt_text character, text summary of the image, Default: 'image'
 #' @param title An optional title for the image, Default: NULL
 #' @param id character, unique identifier for a block, Default: NULL
-#' @return block_image class
+#' @return block element class
 #' @details
 #'
 #'   - Works with block types: *Section*, *Context*
 #'
 #' @examples 
 #' 
-#' block_image(
+#' image_element(
 #'   url = 'http://placekitten.com/500/500',
 #'   alt_text = 'An incredibly cute kitten.'
 #' )
 #' 
-#' block_image(
+#' image_element(
 #'   title = "Please enjoy this photo of a kitten",
 #'   id = 'image4',
 #'   url = 'http://placekitten.com/500/500',
 #'   alt_text = 'An incredibly cute kitten.'
 #' )
-#' @rdname block_image
+#' @rdname image_element
 #' @family elements
 #' @export 
 
-block_image <- function(url = NULL, alt_text = 'image', title = NULL, id = NULL){
+image_element <- function(url = NULL, alt_text = 'image', title = NULL, id = NULL){
   
   if(!is.null(title))
     title <- block_text(title,type = 'plain_text')
@@ -142,7 +199,7 @@ block_image <- function(url = NULL, alt_text = 'image', title = NULL, id = NULL)
     alt_text = alt_text
   )
   
-  structure(compact(payload),class = c('block','block_image','list'))
+  structure(compact(payload),class = c('block','element','list'))
   
 }
 
@@ -151,32 +208,242 @@ block_image <- function(url = NULL, alt_text = 'image', title = NULL, id = NULL)
 #' user to choose one item from a list of possible options.
 #' @param id character, An identifier for the action triggered 
 #' when the radio button group is changed.
-#' @param opts list, a list of block_options.
-#' @param initial_options An option_block that exactly 
+#' @param options list, a list of block_options.
+#' @param initial_option An option_block that exactly 
 #' matches one of the options within options, Default: NULL
 #' @param confirm block_confirm, defines an optional 
 #' confirmation dialog after the button is clicked. Default: NULL
-#' @return block_radio_buttons class
+#' @return block element class
 #' @details
 #' 
 #'   - Works with block types: *Section*, *Actions*, *Input*
 #' 
-#' @rdname block_radio_buttons
+#' @rdname radiobuttons_element
 #' @family elements
 #' @export 
 #' @importFrom checkmate check_class
-block_radio_buttons <- function(id, opts, initial_options = NULL, confirm = NULL){
+radiobuttons_element <- function(id, options, initial_option = NULL, confirm = NULL){
   
-  checkmate::check_class(opts,classes = 'block_options')
+  checkmate::check_class(options,classes = 'block_option')
 
   payload <- list(
     type = 'radio_buttons',
     action_id = id,
-    options = opts,
-    initial_options = initial_options,
+    options = options,
+    initial_option = initial_option,
     confirm = confirm
   )
   
-  structure(compact(payload),class = c('block','block_radio_buttons', 'list'))
+  structure(compact(payload),class = c('block','element', 'list'))
+  
+}
+
+#' @title Plain-text input element
+#' @description A plain-text input, similar to the HTML input tag, 
+#' creates a field where a user can enter freeform data. 
+#' It can appear as a single-line field or a larger textarea 
+#' using the multiline flag.
+#' @param id character, an identifier for the input value when the parent modal
+#'  is submitted.
+#' @param placeholder character, A text object that defines the placeholder text
+#'  shown in the plain-text input.
+#' @param initial_value character, the initial value in the plain-text 
+#' input when it is loaded. Default: NULL
+#' @param multiline logical, indicates whether the input will be a single 
+#' line (FALSE) or a larger textarea (TRUE). Default: NULL
+#' @param min_length integer, the minimum length of input that the user must 
+#' provide. If the user provides less, they will receive an error. Default: NULL
+#' @param max_length integer, The maximum length of input that the user can provide. 
+#' If the user provides more, they will receive an error in the response. Default: NULL
+#' @return block element object
+#' @details Works with block types: *Section*, *Actions*, *Input*
+#' @examples 
+#' plaintext_element(
+#'   id = 'plain_input',
+#'   placeholder = 'Enter some plain text'
+#' )
+#' @family elements
+#' @rdname plaintext_element
+#' @export 
+
+plaintext_element <- function(id, placeholder, initial_value = NULL, multiline = NULL, min_length = NULL, max_length = NULL){
+
+  if(!is.null(multiline))
+    multiline <- checkmate::check_class(multiline,'logical')
+  
+  payload <- list(
+    type = 'plain_text_input',
+    action_id = id,
+    placeholder = block_text(placeholder,type = 'plain_text'),
+    initial_value = initial_value,
+    multiline = multiline,
+    min_length = force_integer(min_length),
+    max_length = force_integer(max_length)
+  )
+  
+  structure(compact(payload),class = c('block','element', 'list'))
+  
+}
+
+#' @title Overflow menu element
+#' @description This is like a cross between a button and a select menu when a 
+#' user clicks on this overflow button, they will be presented with a list of 
+#' options to choose from. Unlike the select menu, there is no typeahead field, 
+#' and the button always appears with an ellipsis ("…") rather than 
+#' customisable text.
+#' @param id character, An identifier for the action triggered when a menu 
+#' option is selected.
+#' @param options An list of block_option objects.
+#' @param confirm A confirm object that defines an optional confirmation 
+#' dialog that appears after a menu item is selected.
+#' @return block menu class 
+#' @details Works with block types: *Section*, *Actions*
+#' @examples 
+#' section_block(
+#'  id = 'section 890',
+#'  text = block_text('This is a section block with an overflow menu.'),
+#'  accessory =  overflow_menu(
+#'       id = 'overflow',
+#'       options = as.blocks(
+#'         lapply(sprintf('value-%d',1:4),block_option,
+#'         text = '*this is plain_text text*')
+#'        )
+#'     )
+#' )
+#' @rdname overflow_menu
+#' @family elements
+#' @export 
+#' @importFrom checkmate check_class
+overflow_menu <- function(id, options, confirm = NULL){
+  
+  checkmate::check_class(options,classes = 'block_option')
+  
+  payload <- list(
+    type = 'overflow',
+    action_id = id,
+    options = options,
+    confirm = confirm
+  )
+  
+  structure(compact(payload),class = c('block','menu', 'list'))
+  
+}
+
+#' @title Select menu element
+#' @description A select menu, just as with a standard HTML select tag, 
+#' creates a drop down menu with a list of options for a user to choose. 
+#' The select menu also includes type-ahead functionality, 
+#' where a user can type a part or all of an option string to filter the list.
+#' @param id character, an identifier for the action triggered when a menu option is selected.
+#' @param placeholder character, defines the placeholder text shown on the menu. 
+#' @param options list, a list of option objects. 
+#' @param option_groups a list of option group objects. Default: NULL
+#' @param initial_option a single option that exactly matches one of the 
+#' options within options or option_groups, Default: NULL
+#' @param confirm A confirm object that defines an optional 
+#' confirmation dialog that appears after a menu item is selected. Default: NULL
+#' @param max_select_items integer, Specifies the maximum number of items that can be selected in the menu, Default: NULL
+#' @return block menu class
+#' @details 
+#' 
+#' Works with block types: *Section*, *Actions*, *Input*
+#' 
+#' If `options` is specified, then `option_groups` should not be and vice versa.
+#' 
+#' @examples 
+#' section_block(
+#' id = 'section678',
+#' text = 'Pick an item from the dropdown list',
+#' accessory = select_menu(
+#'  id = 'text1234',
+#'  placeholder = 'Select an item',
+#'  options = as.blocks(
+#'    lapply(sprintf('value-%d',1:4),block_option,
+#'      text = '*this is plain_text text*')
+#'    )
+#'  )
+#' )
+#' @rdname select_menu
+#' @family elements
+#' @export 
+#' @importFrom checkmate check_class
+select_menu <- function(id, placeholder, options, option_groups = NULL, initial_option = NULL, confirm = NULL, max_select_items = NULL){
+  
+  if(!is.null(options))
+    checkmate::check_class(options,classes = 'block_option')
+  
+  if(!is.null(option_groups))
+    checkmate::check_class(option_groups,classes = 'block_option')
+  
+  if(!is.null(initial_option))
+    checkmate::check_class(initial_option,classes = 'block_option')
+  
+  max_select_items <- force_integer(max_select_items)
+  
+  type <- 'static_select'
+  
+  if(!is.null(max_select_items)){
+    
+    type <- 'multi_static_select'
+    
+  }
+  
+  payload <- list(
+    type = type,
+    action_id = id,
+    placeholder = block_text(placeholder,type='plain_text'),
+    options = options,
+    option_groups = option_groups,
+    initial_option = initial_option,
+    confirm = confirm,
+    max_select_items = max_select_items
+  )
+  
+  structure(compact(payload),class = c('block','menu', 'list'))
+  
+}
+
+#' @title Type specific select menu lists
+#' @description menu lists that populate with team specific elements, such as 
+#' users, conversations and channels
+#' @param id character, an identifier for the action triggered 
+#' when a menu option is selected. 
+#' @param type type of elements to populate,
+#'  Default: c("users", "conversations", "channels")
+#' @param placeholder character, placeholder text shown on the menu.
+#' @param initial initial value of the menu, must by an slack ID, Default: NULL
+#' @param confirm A confirm object that defines an optional 
+#' confirmation dialog that appears after a menu item is selected. Default: NULL
+#' @param max_select_items integer, Specifies the maximum number of items that can be selected in the menu, Default: NULL
+#' @return block menu class
+#' @details Works with block types: *Section*, *Actions*, *Input*
+#' @rdname select_type_menu
+#' @family elements
+#' @export 
+select_type_menu <- function(id, type = c('users','conversations','channels'), placeholder, initial = NULL, confirm = NULL, max_select_items = NULL){
+  
+  type_arg <- match.arg(type, c('users','conversations','channels'))
+  
+  max_select_items <- force_integer(max_select_items)
+  
+  type <- sprintf('%s_select',type_arg)
+  
+  if(!is.null(max_select_items)){
+    
+    type <- sprintf('multi_%s_select',type_arg)
+    
+  }
+  
+  payload <- list(
+    type = type,
+    placeholder = placeholder,
+    action_id = id,
+    confirm = confirm,
+    max_select_items = max_select_items
+  )
+  
+  payload[[sprintf('initial_%s',gsub('s$','',type_arg))]] <- initial
+  
+  structure(compact(payload),class = c('block','menu', 'list'))
   
 }
