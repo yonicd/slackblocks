@@ -42,7 +42,8 @@ button_element <- function(id,
                    style = NULL, 
                    confirm = NULL){
   
-  
+  if(!is.null(confirm))
+    checkmate::expect_class(confirm,'block_confirm')
   
   payload <- list(
     type = 'button',
@@ -104,6 +105,9 @@ checkbox_element <- function(id, options, initial_options = NULL, confirm = NULL
   
   checkmate::check_class(options,classes = 'block_option')
   
+  if(!is.null(confirm))
+    checkmate::expect_class(confirm,'block_confirm')
+  
   payload <- list(
     type = 'checkboxes',
     action_id = id,
@@ -145,6 +149,9 @@ datepicker_element <- function(id,
                              placeholder = NULL,
                              initial_date = NULL,
                              confirm = NULL){
+  
+  if(!is.null(confirm))
+    checkmate::expect_class(confirm,'block_confirm')
   
   payload <- list(
     type = 'datepicker',
@@ -226,6 +233,9 @@ radiobuttons_element <- function(id, options, initial_option = NULL, confirm = N
   
   checkmate::check_class(options,classes = 'block_option')
 
+  if(!is.null(confirm))
+    checkmate::expect_class(confirm,'block_confirm')
+  
   payload <- list(
     type = 'radio_buttons',
     action_id = id,
@@ -318,6 +328,9 @@ overflow_menu <- function(id, options, confirm = NULL){
   
   checkmate::check_class(options,classes = 'block_option')
   
+  if(!is.null(confirm))
+    checkmate::expect_class(confirm,'block_confirm')
+  
   payload <- list(
     type = 'overflow',
     action_id = id,
@@ -377,16 +390,17 @@ select_menu <- function(id, placeholder, options, option_groups = NULL, initial_
   
   if(!is.null(initial_option))
     checkmate::check_class(initial_option,classes = 'block_option')
-  
+ 
+  if(!is.null(confirm))
+    checkmate::expect_class(confirm,'block_confirm')
+   
   max_select_items <- force_integer(max_select_items)
   
   type <- 'static_select'
   
-  if(!is.null(max_select_items)){
-    
+  if(!is.null(max_select_items))
     type <- 'multi_static_select'
-    
-  }
+
   
   payload <- list(
     type = type,
@@ -424,19 +438,19 @@ select_type_menu <- function(id, type = c('users','conversations','channels'), p
   
   type_arg <- match.arg(type, c('users','conversations','channels'))
   
+  if(!is.null(confirm))
+    checkmate::expect_class(confirm,'block_confirm')
+  
   max_select_items <- force_integer(max_select_items)
   
   type <- sprintf('%s_select',type_arg)
   
-  if(!is.null(max_select_items)){
-    
+  if(!is.null(max_select_items))
     type <- sprintf('multi_%s_select',type_arg)
-    
-  }
   
   payload <- list(
     type = type,
-    placeholder = placeholder,
+    placeholder = block_text(text = placeholder,type = 'plain_text'),
     action_id = id,
     confirm = confirm,
     max_select_items = max_select_items
