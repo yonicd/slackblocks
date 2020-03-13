@@ -55,4 +55,4 @@ jobs:
           token: ${{secrets.GITHUB_PAT}}
           repository: yonicd/slackreprex
           event-type: push
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "repository" : "${{ github.repository }}"}'
