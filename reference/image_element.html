@@ -123,7 +123,7 @@
     <p>A simple image block</p>
     </div>
 
-    <pre class="usage"><span class='fu'>image_element</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>"image"</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>image_element</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>"image"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -135,14 +135,6 @@
     <tr>
       <th>alt_text</th>
       <td><p>character, text summary of the image, Default: 'image'</p></td>
-    </tr>
-    <tr>
-      <th>title</th>
-      <td><p>An optional title for the image, Default: NULL</p></td>
-    </tr>
-    <tr>
-      <th>id</th>
-      <td><p>character, unique identifier for a block, Default: NULL</p></td>
     </tr>
     </table>
 
@@ -171,28 +163,14 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='fu'>image_element</span>(
-  <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>'http://placekitten.com/500/500'</span>,
-  <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>'An incredibly cute kitten.'</span>
+  <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>'http://placekitten.com/700/500'</span>,
+  <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>'Multiple cute kittens.'</span>
 )</div><div class='output co'>#&gt; {
 #&gt;   "type": "image",
-#&gt;   "image_url": "http://placekitten.com/500/500",
-#&gt;   "alt_text": "An incredibly cute kitten."
+#&gt;   "image_url": "http://placekitten.com/700/500",
+#&gt;   "alt_text": "Multiple cute kittens."
 #&gt; } </div><div class='input'>
-<span class='fu'>image_element</span>(
-  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Please enjoy this photo of a kitten"</span>,
-  <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>'image4'</span>,
-  <span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>'http://placekitten.com/500/500'</span>,
-  <span class='kw'>alt_text</span> <span class='kw'>=</span> <span class='st'>'An incredibly cute kitten.'</span>
-)</div><div class='output co'>#&gt; {
-#&gt;   "type": "image",
-#&gt;   "title": {
-#&gt;     "type": "plain_text",
-#&gt;     "text": "Please enjoy this photo of a kitten"
-#&gt;   },
-#&gt;   "block_id": "image4",
-#&gt;   "image_url": "http://placekitten.com/500/500",
-#&gt;   "alt_text": "An incredibly cute kitten."
-#&gt; } </div></pre>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
