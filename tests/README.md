@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-10 March, 2020 01:59:33
+13 March, 2020 12:40:17
 
   - [Coverage](#coverage)
   - [Unit Tests](#unit-tests)
@@ -29,17 +29,17 @@ Coverage summary is created using the
 Unit Test summary is created using the
 [testthat](https://github.com/r-lib/testthat) package.
 
-| file                                  | n | time | error | failed | skipped | warning |
-| :------------------------------------ | -: | ---: | ----: | -----: | ------: | ------: |
-| [test-check.R](testthat/test-check.R) | 1 | 0.03 |     0 |      0 |       0 |       0 |
+| file                                  | n |  time | error | failed | skipped | warning |
+| :------------------------------------ | -: | ----: | ----: | -----: | ------: | ------: |
+| [test-check.R](testthat/test-check.R) | 1 | 0.031 |     0 |      0 |       0 |       0 |
 
 <details closed>
 
 <summary> Show Detailed Test Results </summary>
 
-| file                                     | context | test                 | status | n | time |
-| :--------------------------------------- | :------ | :------------------- | :----- | -: | ---: |
-| [test-check.R](testthat/test-check.R#L2) | check   | multiplication works | PASS   | 1 | 0.03 |
+| file                                     | context | test                 | status | n |  time |
+| :--------------------------------------- | :------ | :------------------- | :----- | -: | ----: |
+| [test-check.R](testthat/test-check.R#L2) | check   | multiplication works | PASS   | 1 | 0.031 |
 
 </details>
 
@@ -50,7 +50,7 @@ Unit Test summary is created using the
 | Field    | Value                               |                                                                                                                                                                                                                                                                     |
 | :------- | :---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version  | R version 3.6.3 (2020-02-29)        |                                                                                                                                                                                                                                                                     |
-| Platform | x86\_64-apple-darwin15.6.0 (64-bit) | <a href="https://github.com/yonicd/slackblocks/commit/a5f661cb49093ae42e2bdefb9081e6d350e65a9a/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
+| Platform | x86\_64-apple-darwin15.6.0 (64-bit) | <a href="https://github.com/yonicd/slackblocks/commit/ec45549f85ed109903ee22c22f46be6cedaf37e0/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
 | Running  | macOS Catalina 10.15.3              |                                                                                                                                                                                                                                                                     |
 | Language | en\_US                              |                                                                                                                                                                                                                                                                     |
 | Timezone | UTC                                 |                                                                                                                                                                                                                                                                     |
