@@ -169,8 +169,6 @@ datepicker_element <- function(id,
 #' @description A simple image block
 #' @param url character, URL of the image to be displayed, Default: NULL
 #' @param alt_text character, text summary of the image, Default: 'image'
-#' @param title An optional title for the image, Default: NULL
-#' @param id character, unique identifier for a block, Default: NULL
 #' @return block element class
 #' @details
 #'
@@ -179,29 +177,21 @@ datepicker_element <- function(id,
 #' @examples 
 #' 
 #' image_element(
-#'   url = 'http://placekitten.com/500/500',
-#'   alt_text = 'An incredibly cute kitten.'
+#'   url = 'http://placekitten.com/700/500',
+#'   alt_text = 'Multiple cute kittens.'
 #' )
 #' 
-#' image_element(
-#'   title = "Please enjoy this photo of a kitten",
-#'   id = 'image4',
-#'   url = 'http://placekitten.com/500/500',
-#'   alt_text = 'An incredibly cute kitten.'
-#' )
 #' @rdname image_element
 #' @family elements
 #' @export 
 
-image_element <- function(url = NULL, alt_text = 'image', title = NULL, id = NULL){
+image_element <- function(url = NULL, alt_text = 'image'){
   
   if(!is.null(title))
     title <- block_text(title,type = 'plain_text')
   
   payload <- list(
     type = 'image',
-    title = title,
-    block_id = id,
     image_url = url,
     alt_text = alt_text
   )

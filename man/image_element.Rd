@@ -4,16 +4,12 @@
 \alias{image_element}
 \title{Image element}
 \usage{
-image_element(url = NULL, alt_text = "image", title = NULL, id = NULL)
+image_element(url = NULL, alt_text = "image")
 }
 \arguments{
 \item{url}{character, URL of the image to be displayed, Default: NULL}
 
 \item{alt_text}{character, text summary of the image, Default: 'image'}
-
-\item{title}{An optional title for the image, Default: NULL}
-
-\item{id}{character, unique identifier for a block, Default: NULL}
 }
 \value{
 block element class
@@ -29,16 +25,10 @@ A simple image block
 \examples{
 
 image_element(
-  url = 'http://placekitten.com/500/500',
-  alt_text = 'An incredibly cute kitten.'
+  url = 'http://placekitten.com/700/500',
+  alt_text = 'Multiple cute kittens.'
 )
 
-image_element(
-  title = "Please enjoy this photo of a kitten",
-  id = 'image4',
-  url = 'http://placekitten.com/500/500',
-  alt_text = 'An incredibly cute kitten.'
-)
 }
 \seealso{
 Other elements: 
