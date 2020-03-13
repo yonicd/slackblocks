@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-13 March, 2020 12:40:17
+13 March, 2020 12:50:49
 
   - [Coverage](#coverage)
   - [Unit Tests](#unit-tests)
@@ -50,7 +50,7 @@ Unit Test summary is created using the
 | Field    | Value                               |                                                                                                                                                                                                                                                                     |
 | :------- | :---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version  | R version 3.6.3 (2020-02-29)        |                                                                                                                                                                                                                                                                     |
-| Platform | x86\_64-apple-darwin15.6.0 (64-bit) | <a href="https://github.com/yonicd/slackblocks/commit/ec45549f85ed109903ee22c22f46be6cedaf37e0/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
+| Platform | x86\_64-apple-darwin15.6.0 (64-bit) | <a href="https://github.com/yonicd/slackblocks/commit/d1e98ec0e4bc16798d48131c64822b8d61862f44/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
 | Running  | macOS Catalina 10.15.3              |                                                                                                                                                                                                                                                                     |
 | Language | en\_US                              |                                                                                                                                                                                                                                                                     |
 | Timezone | UTC                                 |                                                                                                                                                                                                                                                                     |
