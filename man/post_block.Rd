@@ -35,10 +35,7 @@ if(interactive()){
 }
 }
 \seealso{
-\code{\link[slackcalls]{post_slack}}
-
 Other post: 
-\code{\link{post_thread}()},
 \code{\link{prep_channel}()}
 }
 \concept{post}

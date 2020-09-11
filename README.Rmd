@@ -54,15 +54,14 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(slackblocks)
-library(magrittr)
 ```
 
 ```{r}
-slackblocks::block_text('my text')
+block_text('my text')
 ```
 
 ```{r}
-slackblocks::image_element('url_to_image')
+image_element('url_to_image')
 ```
 
 ```{r}
@@ -80,13 +79,8 @@ slackblocks::image_element('url_to_image')
 
 ## Posting Blocks to Slack
 
-```{r,eval = FALSE}
-slackteams::load_team_dcf(team = 'r4ds')
-slackteams::activate_team('r4ds')
-```
-
 ```{r,eval=FALSE}
-post_block(b,channel = 'yonicd')
+post_block(b, channel = 'CHANNELID')
 ```
 
 ```{r,echo=FALSE}

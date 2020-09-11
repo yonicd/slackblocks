@@ -14,7 +14,7 @@ when a menu option is selected.}
 
 \item{initial_date}{Date, The initial date that is
 selected when the element is loaded.
-This should be in the \link[base:strftime]{strftime}
+This should be in the \link[base:strptime]{strftime}
 format '\%Y-\%m-\%d'. Default: NULL}
 
 \item{confirm}{block_confirm, defines an optional

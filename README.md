@@ -40,11 +40,10 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(slackblocks)
-library(magrittr)
 ```
 
 ``` r
-slackblocks::block_text('my text')
+block_text('my text')
 #> {
 #>   "type": "mrkdwn",
 #>   "text": "my text"
@@ -52,7 +51,7 @@ slackblocks::block_text('my text')
 ```
 
 ``` r
-slackblocks::image_element('url_to_image')
+image_element('url_to_image')
 #> {
 #>   "type": "image",
 #>   "image_url": "url_to_image",
@@ -101,12 +100,7 @@ slackblocks::image_element('url_to_image')
 ## Posting Blocks to Slack
 
 ``` r
-slackteams::load_team_dcf(team = 'r4ds')
-slackteams::activate_team('r4ds')
-```
-
-``` r
-post_block(b,channel = 'yonicd')
+post_block(b, channel = 'CHANNELID')
 ```
 
 <img src="man/figures/sections.png" width="100%" />
