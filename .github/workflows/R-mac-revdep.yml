@@ -59,3 +59,12 @@ jobs:
             "body": "The Reverse Dependency ${{ github.repository }} of ${{ github.event.client_payload.repository }} has broken due to the commit ${{ github.event.client_payload.sha }}",
             "label" = "revdep breaking"
             }'
+
+      - name: slackreprex trigger
+        if: github.ref == 'refs/heads/master'
+        uses: peter-evans/repository-dispatch@v1.0.0
+        with:
+          token: ${{secrets.GITHUB_PAT}}
+          repository: yonicd/slackreprex
+          event-type: push
+          client-payload: '{"ref": "${{ github.event.client_payload.ref }}", "sha": "${{ github.event.client_payload.sha }}", "repository" : "${{ github.event.client_payload.repository }}"}'
