@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-14 March, 2020 11:11:45
+11 September, 2020 00:35:42
 
   - [Coverage](#coverage)
   - [Unit Tests](#unit-tests)
@@ -20,6 +20,7 @@ Coverage summary is created using the
 | [R/elements.R](../R/elements.R)         |      0       |
 | [R/layout.R](../R/layout.R)             |      0       |
 | [R/post.R](../R/post.R)                 |      0       |
+| [R/prep.R](../R/prep.R)                 |      0       |
 | [R/utils.R](../R/utils.R)               |      0       |
 
 <br>
@@ -29,17 +30,17 @@ Coverage summary is created using the
 Unit Test summary is created using the
 [testthat](https://github.com/r-lib/testthat) package.
 
-| file                                  | n | time | error | failed | skipped | warning |
-| :------------------------------------ | -: | ---: | ----: | -----: | ------: | ------: |
-| [test-check.R](testthat/test-check.R) | 1 | 0.04 |     0 |      0 |       0 |       0 |
+| file                                  | n |  time | error | failed | skipped | warning |
+| :------------------------------------ | -: | ----: | ----: | -----: | ------: | ------: |
+| [test-check.R](testthat/test-check.R) | 1 | 0.035 |     0 |      0 |       0 |       0 |
 
 <details closed>
 
 <summary> Show Detailed Test Results </summary>
 
-| file                                     | context | test                 | status | n | time |
-| :--------------------------------------- | :------ | :------------------- | :----- | -: | ---: |
-| [test-check.R](testthat/test-check.R#L2) | check   | multiplication works | PASS   | 1 | 0.04 |
+| file                                     | context | test                 | status | n |  time |
+| :--------------------------------------- | :------ | :------------------- | :----- | -: | ----: |
+| [test-check.R](testthat/test-check.R#L2) | check   | multiplication works | PASS   | 1 | 0.035 |
 
 </details>
 
@@ -48,10 +49,10 @@ Unit Test summary is created using the
 <summary> Session Info </summary>
 
 | Field    | Value                               |                                                                                                                                                                                                                                                                     |
-| :------- | :---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :------- | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Version  | R version 3.6.3 (2020-02-29)        |                                                                                                                                                                                                                                                                     |
-| Platform | x86\_64-apple-darwin15.6.0 (64-bit) | <a href="https://github.com/yonicd/slackblocks/commit/a710242af8c9e3d51647a123af8d462241f1b1ad/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
-| Running  | macOS Catalina 10.15.3              |                                                                                                                                                                                                                                                                     |
+| Platform | x86\_64-apple-darwin15.6.0 (64-bit) | <a href="https://github.com/yonicd/slackblocks/commit/e44609f44d49d37305e5b5d00fd27941e9ca5ae9/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
+| Running  | macOS Catalina 10.15.6              |                                                                                                                                                                                                                                                                     |
 | Language | en\_US                              |                                                                                                                                                                                                                                                                     |
 | Timezone | UTC                                 |                                                                                                                                                                                                                                                                     |
 
