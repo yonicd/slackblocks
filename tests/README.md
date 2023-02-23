@@ -1,12 +1,12 @@
 Tests and Coverage
 ================
-12 September, 2020 11:01:10
+23 February, 2023 16:39:11
 
-  - [Coverage](#coverage)
-  - [Unit Tests](#unit-tests)
+- <a href="#coverage" id="toc-coverage">Coverage</a>
+- <a href="#unit-tests" id="toc-unit-tests">Unit Tests</a>
 
 This output is created by
-[covrpage](https://github.com/metrumresearchgroup/covrpage).
+[covrpage](https://github.com/yonicd/covrpage).
 
 ## Coverage
 
@@ -14,7 +14,7 @@ Coverage summary is created using the
 [covr](https://github.com/r-lib/covr) package.
 
 | Object                                  | Coverage (%) |
-| :-------------------------------------- | :----------: |
+|:----------------------------------------|:------------:|
 | slackblocks                             |      0       |
 | [R/compositions.R](../R/compositions.R) |      0       |
 | [R/elements.R](../R/elements.R)         |      0       |
@@ -30,38 +30,38 @@ Coverage summary is created using the
 Unit Test summary is created using the
 [testthat](https://github.com/r-lib/testthat) package.
 
-| file                                  | n |  time | error | failed | skipped | warning |
-| :------------------------------------ | -: | ----: | ----: | -----: | ------: | ------: |
-| [test-check.R](testthat/test-check.R) | 1 | 0.038 |     0 |      0 |       0 |       0 |
+| file                                |   n | time | error | failed | skipped | warning |
+|:------------------------------------|----:|-----:|------:|-------:|--------:|--------:|
+| [test-post.R](testthat/test-post.R) |   1 | 0.02 |     0 |      0 |       0 |       0 |
 
 <details closed>
+<summary>
+Show Detailed Test Results
+</summary>
 
-<summary> Show Detailed Test Results </summary>
-
-| file                                     | context | test                 | status | n |  time |
-| :--------------------------------------- | :------ | :------------------- | :----- | -: | ----: |
-| [test-check.R](testthat/test-check.R#L2) | check   | multiplication works | PASS   | 1 | 0.038 |
+| file                                    | context | test             | status |   n | time |
+|:----------------------------------------|:--------|:-----------------|:-------|----:|-----:|
+| [test-post.R](testthat/test-post.R#L54) | post    | post_block works | PASS   |   1 | 0.02 |
 
 </details>
-
 <details>
+<summary>
+Session Info
+</summary>
 
-<summary> Session Info </summary>
-
-| Field    | Value                               |                                                                                                                                                                                                                                                                     |
-| :------- | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Version  | R version 3.6.3 (2020-02-29)        |                                                                                                                                                                                                                                                                     |
-| Platform | x86\_64-apple-darwin15.6.0 (64-bit) | <a href="https://github.com/yonicd/slackblocks/commit/8335ab7941cdb6bbfe94f6c6ac07294e8989a776/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
-| Running  | macOS Catalina 10.15.6              |                                                                                                                                                                                                                                                                     |
-| Language | en\_US                              |                                                                                                                                                                                                                                                                     |
-| Timezone | UTC                                 |                                                                                                                                                                                                                                                                     |
+| Field    | Value                             |
+|:---------|:----------------------------------|
+| Version  | R version 4.2.2 (2022-10-31 ucrt) |
+| Platform | x86_64-w64-mingw32/x64 (64-bit)   |
+| Running  | Windows 10 x64 (build 22621)      |
+| Language | English_United States             |
+| Timezone | America/Chicago                   |
 
 | Package  | Version |
-| :------- | :------ |
-| testthat | 2.3.2   |
-| covr     | 3.5.0   |
-| covrpage | 0.0.71  |
+|:---------|:--------|
+| testthat | 3.1.6   |
+| covr     | 3.6.1   |
+| covrpage | 0.2     |
 
 </details>
-
 <!--- Final Status : pass --->

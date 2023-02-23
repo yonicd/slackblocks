@@ -1,9 +1,3 @@
-#' @importFrom slackposts chat_message
-post <- function(channel, block, ..., token = Sys.getenv('SLACK_API_TOKEN')){
-
-}
-
-
 #' @title Post Block Element
 #' @description Post block to slack channel
 #' @param block block element(s)
